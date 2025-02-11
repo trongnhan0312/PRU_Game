@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 0.5f;
 
-    [SerializeField] private float damage = 0.5f;
+ 
     [SerializeField] private LayerMask enemyLayers;
 
     /* private GameManager gameManager;*/
@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             if (enemyScript != null)
             {
-                enemyScript.TakeDamage(damage); // Gây sát thương lên Enemy
+               
             }
         }
     }
