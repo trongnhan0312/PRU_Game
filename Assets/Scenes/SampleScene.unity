@@ -395,14 +395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2818d0ecb0d313b4ea6a353d310e34b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolSpeed: 2
-  chaseSpeed: 2
-  patrolDistance: 2
-  detectionRange: 2
-  maxHp: 50
-  HpBar: {fileID: 0}
-  enterDamage: 10
-  stayDamage: 1
+  speed: 2
+  chaseSpeed: 3
+  patrolDistance: 3
+  detectionRange: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &426152517
 Animator:
   serializedVersion: 7
@@ -459,7 +458,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00845582, y: -0.09583372}
+  m_Offset: {x: 0.0069169477, y: -0.11430189}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -469,7 +468,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.28651905, y: 0.25833255}
+  m_Size: {x: 0.2895968, y: 0.2952689}
   m_EdgeRadius: 0
 --- !u!50 &426152519
 Rigidbody2D:
@@ -497,7 +496,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &426152520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5697,7 +5696,6 @@ MonoBehaviour:
   currentAmmo: 0
   attackPoint: {fileID: 0}
   attackRange: 0.5
-  damage: 0.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 0

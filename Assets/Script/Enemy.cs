@@ -1,118 +1,95 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float patrolSpeed = 2f; // Tốc độ di chuyển tuần tra
-    [SerializeField] private float chaseSpeed = 2f; // Tốc độ khi đuổi theo Player
-    [SerializeField] private float patrolDistance = 2f; // Khoảng cách di chuyển qua lại
-    [SerializeField] private float detectionRange = 2f; // Phạm vi phát hiện Player
-
-    [SerializeField] protected float maxHp = 50f; // Máu tối đa
-    protected float currentHp; // Máu hiện tại
-    [SerializeField] protected Image HpBar;
-
-    private Vector2 initialPosition;
-    private Vector2 patrolTarget;
-    private PlayerController player;
-    private bool chasingPlayer = false;
-    private bool movingRight = true;
-
-    [SerializeField] protected float enterDamage = 10f; // Sát thương khi Player va chạm
-    [SerializeField] protected float stayDamage = 1f; // Sát thương khi tấn công
-
+    [SerializeField] private float patrolSpeed = 2f, chaseSpeed = 3.5f, patrolDistance = 3f, detectionRange = 5f;
+    private Vector3 startPos;
+    private int direction = 1;
+    private Transform player;
+    private bool isChasing = false, isAttacking = false;
     private Animator animator;
+
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
-        initialPosition = transform.position;
-        patrolTarget = initialPosition + Vector2.right * patrolDistance;
-        currentHp = maxHp;
-        animator = GetComponent<Animator>(); // Tham chiếu Animator
-        UpdateHpBar();
+        startPos = transform.position;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        animator = GetComponent<Animator>();
+
+        if (animator == null) Debug.LogError("⚠️ Animator chưa được gắn vào Enemy!");
     }
 
     private void Update()
     {
-        bool isMoving = false; // Mặc định là không di chuyển
+        if (player == null) return;
 
-        if (player != null)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float distanceFromStart = Mathf.Abs(player.position.x - startPos.x);
+
+        if (isAttacking) return; // Nếu đang tấn công thì không di chuyển
+
+        if (distanceToPlayer <= detectionRange && distanceFromStart <= patrolDistance)
         {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-
-            if (distanceToPlayer < detectionRange)
+            if (!isChasing)
             {
-                chasingPlayer = true;
+                Debug.Log("🚀 Enemy bắt đầu đuổi theo Player!");
+                animator.SetBool("IsMoving", true);
             }
-            else
-            {
-                chasingPlayer = false;
-            }
-        }
 
-        if (chasingPlayer)
-        {
-            moveToPlayer();
-            isMoving = true; // Enemy đang di chuyển
+            isChasing = true;
+            ChasePlayer();
         }
         else
         {
+            if (isChasing)
+            {
+                Debug.Log("❌ Enemy ngừng đuổi theo Player!");
+                isChasing = false;
+                animator.SetBool("IsMoving", false);
+            }
             Patrol();
-            isMoving = true; // Nếu Patrol, vẫn coi là di chuyển
         }
-
-        animator.SetBool("isMoving", isMoving); // Cập nhật Animator
-    }
-
-
-    private void moveToPlayer()
-    {
-        Vector2 targetPosition = new Vector2(player.transform.position.x, transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
-
-        FlipEnemy(player.transform.position.x);
     }
 
     private void Patrol()
     {
-        transform.position = Vector2.MoveTowards(transform.position, patrolTarget, patrolSpeed * Time.deltaTime);
+        transform.position += Vector3.right * patrolSpeed * direction * Time.deltaTime;
+        animator.SetBool("IsMoving", true);
+        if (Mathf.Abs(transform.position.x - startPos.x) >= patrolDistance) Flip();
+    }
 
-        if (Vector2.Distance(transform.position, patrolTarget) < 0.1f)
+    private void ChasePlayer()
+    {
+        Vector3 target = new Vector3(player.position.x, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, target, chaseSpeed * Time.deltaTime);
+        if ((player.position.x > transform.position.x && direction == -1) ||
+            (player.position.x < transform.position.x && direction == 1)) Flip();
+    }
+
+    private void Flip()
+    {
+        direction *= -1;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            movingRight = !movingRight;
-            patrolTarget = initialPosition + (movingRight ? Vector2.right : Vector2.left) * patrolDistance;
-            FlipEnemy(patrolTarget.x);
+            Debug.Log("🔥 Enemy bắt đầu tấn công Player!");
+            isAttacking = true;
+            animator.SetBool("IsAttacking", true);
+            animator.SetBool("IsMoving", false);
         }
     }
 
-    private void FlipEnemy(float targetX)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        Vector3 newScale = transform.localScale;
-        newScale.x = (targetX < transform.position.x) ? -Mathf.Abs(newScale.x) : Mathf.Abs(newScale.x);
-        transform.localScale = newScale;
-    }
-
-    public virtual void TakeDamage(float damage)
-    {
-        currentHp -= damage;
-        currentHp= Mathf.Max(currentHp, 0);
-        UpdateHpBar();
-        if (currentHp <= 0) 
+        if (collision.CompareTag("Player"))
         {
-            Die();
-        }
-    }
-
-    protected virtual void Die()
-    {
-        Destroy(gameObject);
-    }
-
-    protected virtual void UpdateHpBar()
-    {
-        if (HpBar != null)
-        {
-            HpBar.fillAmount = currentHp / maxHp;
+            Debug.Log("⚡ Enemy ngừng tấn công!");
+            isAttacking = false;
+            animator.SetBool("IsAttacking", false);
+            animator.SetBool("IsMoving", true);
         }
     }
 }
