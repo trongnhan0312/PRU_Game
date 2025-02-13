@@ -22,19 +22,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxAmmo = 24;
     public int currentAmmo;
 
-
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRange = 0.5f;
-
- 
+    [SerializeField] private float attackRange = 1f;
     [SerializeField] private LayerMask enemyLayers;
+
 
     /* private GameManager gameManager;*/
 
     [SerializeField] private Image ammoBar; // Thanh màu xanh (UI Image)
-    [SerializeField] private float maxHp = 100f;
-    private float currentHp;
-    [SerializeField] private Image HpBar;
+    [SerializeField] protected float maxHp = 100f;
+    protected float currentHp;
+    [SerializeField] private Image hpBar;
 
     private void Awake()
     {
@@ -120,30 +118,30 @@ public class PlayerController : MonoBehaviour
     {
         bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
         bool isJumping = !isGrounded;
-
-        // Nếu đang chạy hoặc nhảy thì không thể đánh
         if (isRunning || isJumping) return;
 
         if (Input.GetMouseButtonDown(0)) // Chuột trái để đánh
         {
             animator.SetTrigger("IsAttacking");
-            StartCoroutine(AttackRoutine());
+            Attack(); // Gọi trực tiếp Attack()
         }
     }
 
 
-    private IEnumerator AttackRoutine()
-    {
-        yield return new WaitForSeconds(0.1f); // Đợi animation bắt đầu
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+    private void Attack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
-            if (enemyScript != null)
+            if (enemy.CompareTag("Enemy")) // Kiểm tra tag Enemy
             {
-               
+                Enemy enemyScript = enemy.GetComponent<Enemy>();
+                if (enemyScript != null)
+                {
+                    enemyScript.TakeDamage(10f); // Gây 10 sát thương
+                }
             }
         }
     }
@@ -158,39 +156,52 @@ public class PlayerController : MonoBehaviour
     {
         bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
         bool isJumping = !isGrounded;
+
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
-
     }
 
-    public void TakeDamage(float damage)
+
+    public void TakeDame(float damage)
     {
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
+
+        StopAllCoroutines(); // Dừng tất cả animation trước đó để tránh bị ghi đè
+        animator.SetBool("IsHurt", true); // Chạy animation bị thương
+
         if (currentHp <= 0)
         {
             Die();
         }
     }
+
+
+
     private void Die()
     {
         Destroy(gameObject);
     }
+
     private void UpdateHpBar()
     {
-        if (HpBar != null)
+        if (hpBar != null)
         {
-            HpBar.fillAmount = currentHp / maxHp;
+            hpBar.fillAmount = currentHp / maxHp;
         }
     }
-    private void OnDrawGizmos()
-{
-    if (attackPoint != null)
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
     }
-}
+    public void ResetHurtAnimation()
+    {
+        animator.SetBool("IsHurt", false);
+    }
 
 }

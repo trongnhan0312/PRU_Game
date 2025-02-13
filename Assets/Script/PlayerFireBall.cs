@@ -33,7 +33,7 @@ public class PlayerFireBall : MonoBehaviour
             Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy != null)
             {
-
+                enemy.TakeDamage(damage);
             }
             Destroy(gameObject);
         }
