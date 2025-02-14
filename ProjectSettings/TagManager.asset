@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Banana
-  - Watermelon
   - Fire
   - Enemy
   - Mana
+  - HP
+  - KC
   layers:
   - Default
   - TransparentFX
@@ -79,8 +79,14 @@ TagManager:
   - name: Enemy
     uniqueID: 1779961341
     locked: 0
+  - name: Blood
+    uniqueID: 4241179847
+    locked: 0
   - name: HpEnemy
     uniqueID: 1002530561
+    locked: 0
+  - name: GameUI
+    uniqueID: 2469348843
     locked: 0
   m_RenderingLayers:
   - Default
