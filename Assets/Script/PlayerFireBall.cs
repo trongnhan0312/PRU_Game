@@ -6,6 +6,7 @@ public class PlayerFireBall : MonoBehaviour
     [SerializeField] private float timeDestroy = 0.5f;
 
     [SerializeField] private float damage = 10f;
+    [SerializeField] GameObject bloodPrefab;
     private Vector2 moveDirection; // Lưu hướng bay của đạn
 
     void Start()
@@ -34,6 +35,8 @@ public class PlayerFireBall : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
+                GameObject blood = Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+                Destroy(blood, 1f);
             }
             Destroy(gameObject);
         }

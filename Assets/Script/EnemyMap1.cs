@@ -65,29 +65,37 @@ public class EnemyMap1 : Enemy
 
     protected override void Die()
     {
+        Vector3 effectPosition = transform.position;
+
+        // Raycast kiểm tra vị trí mặt đất để đặt hiệu ứng chết
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
+        if (hit.collider != null)
+        {
+            effectPosition.y = hit.point.y + 0.8f;
+        }
+
+        // ✅ Tạo hiệu ứng chết (Luôn có)
+        if (effectObject != null)
+        {
+            GameObject effectDie = Instantiate(effectObject, effectPosition, Quaternion.identity);
+            Destroy(effectDie, 0.5f);
+        }
+
+        // ✅ Nếu có manaObject thì spawn
         if (manaObject != null)
         {
             Vector3 spawnPosition = transform.position;
 
-            // Raycast kiểm tra vị trí mặt đất
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
+            // Kiểm tra vị trí để spawn mana trên mặt đất
             if (hit.collider != null)
             {
-                spawnPosition.y = hit.point.y + 0.05f; // Đặt item hơi cao một chút để tránh bị lọt vào nền
+                spawnPosition.y = hit.point.y + 0.05f;
             }
-            Vector3 effect = transform.position;
 
-            // Raycast kiểm tra vị trí mặt đất
-            RaycastHit2D hits = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
-            if (hit.collider != null)
-            {
-                effect.y = hit.point.y + 0.8f; // Đặt effect hơi cao một chút để tránh bị lọt vào nền
-            }
-            GameObject effectDie = Instantiate(effectObject, effect, Quaternion.identity);
-            Destroy(effectDie, 0.5f);
             GameObject mana = Instantiate(manaObject, spawnPosition, Quaternion.identity);
             Destroy(mana, 10f);
         }
+
         base.Die();
     }
 
