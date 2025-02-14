@@ -8,6 +8,7 @@ TagManager:
   - Watermelon
   - Fire
   - Enemy
+  - Mana
   layers:
   - Default
   - TransparentFX
