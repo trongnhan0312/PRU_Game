@@ -9,6 +9,8 @@ TagManager:
   - Mana
   - HP
   - KC
+  - Wall
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -84,6 +86,9 @@ TagManager:
     locked: 0
   - name: HpEnemy
     uniqueID: 1002530561
+    locked: 0
+  - name: NPC
+    uniqueID: 824001451
     locked: 0
   - name: GameUI
     uniqueID: 2469348843
