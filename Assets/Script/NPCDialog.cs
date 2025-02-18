@@ -56,10 +56,13 @@ public class NPCDialog : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             readyToSpeak = false;
-            EndConversation();
-            
+            if (dialogPanel.activeSelf) // Chỉ kết thúc khi đang hội thoại
+            {
+                EndConversation();
+            }
         }
     }
+
 
     private void StartConversation()
     {
