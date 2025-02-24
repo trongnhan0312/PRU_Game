@@ -8,6 +8,10 @@ public class EnemyMap1 : Enemy
     private float lastAttackTime = 0f;
     [SerializeField] private GameObject manaObject;
     [SerializeField] private GameObject effectObject;
+    [SerializeField] private GameObject nextText; // Tham chiếu đến "-> Next"
+    [SerializeField] private GameObject nextCheckpoint; // Checkpoint để qua màn
+    public bool IsKilledBoss { get; private set; } = false; // Dùng property
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -97,6 +101,18 @@ public class EnemyMap1 : Enemy
         }
 
         base.Die();
+        if (isBoss)
+        {
+            IsKilledBoss = true;
+        }
+        if (isBoss && IsKilledBoss) // Nếu là boss thì hiển thị "Next" và mở checkpoint
+        {
+            if (nextText != null)
+                nextText.SetActive(true); // Hiện chữ "-> Next"
+
+            if (nextCheckpoint != null)
+                nextCheckpoint.SetActive(true); // Bật trigger qua màn
+        }
     }
 
 

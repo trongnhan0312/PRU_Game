@@ -19,6 +19,7 @@
         [SerializeField] protected float stayDamage = 1f;
 
          private bool isHurt = false;
+    [SerializeField] public bool isBoss = false; // Đánh dấu boss
 
     private void Start()
         {
