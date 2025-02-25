@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemyMap1 : Enemy
+public class BossMap3Controller : Enemy
 {
     public Animator animator;
     public float attackCooldown = 1f; // Thời gian giữa các lần gây sát thương
@@ -20,22 +20,39 @@ public class EnemyMap1 : Enemy
             if (player != null)
             {
                 player.TakeDame(enterDamage);
-                animator.SetBool("IsAttacking", true);
                 animator.SetBool("IsMoving", false);
+
+                animator.Play("BossMap3Attack1"); // Chạy animation trực tiếp
+                animator.SetBool("IsAttacking", true);
+
+                Debug.Log("🔴 Đã kích hoạt Attack Animation");
             }
         }
     }
+
+
 
     public float damageInterval = 0.3f; // Thời gian giữa các lần gây sát thương
     private bool isDamaging = false; // Kiểm soát tránh gây sát thương liên tục mỗi frame
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !isDamaging)
+        if (collision.CompareTag("Player"))
         {
-            StartCoroutine(DealDamageOverTime(collision.gameObject.GetComponent<PlayerController>()));
+            if (!animator.GetBool("IsAttacking"))
+            {
+                animator.SetBool("IsAttacking", true);
+                animator.SetBool("IsMoving", false);
+                Debug.Log("🔴 Boss bắt đầu tấn công Player");
+            }
+
+            if (!isDamaging)
+            {
+                StartCoroutine(DealDamageOverTime(collision.gameObject.GetComponent<PlayerController>()));
+            }
         }
     }
+
 
     private IEnumerator DealDamageOverTime(PlayerController player)
     {
@@ -56,17 +73,18 @@ public class EnemyMap1 : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            if (player != null)
+            if (animator.GetBool("IsAttacking"))
             {
-                StopAllCoroutines(); // Dừng tất cả coroutine đang chạy
-                player.ResetHurtAnimation(); // Gọi hàm để tắt IsHurt khi rời khỏi quái
+                animator.SetBool("IsAttacking", false);
+                animator.SetBool("IsMoving", true);
+                Debug.Log("⚠️ Boss ngừng tấn công, chuyển về trạng thái di chuyển");
             }
 
-            animator.SetBool("IsAttacking", false);
-            animator.SetBool("IsMoving", true);
+            StopAllCoroutines(); // Dừng gây sát thương khi Player rời đi
+            isDamaging = false;
         }
     }
+
 
     protected override void Die()
     {

@@ -40,8 +40,8 @@ public class NextLevelTrigger : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Static; // Đặt Player thành Static để không đi xuyên
             }
 
-            // Load scene sau 0.5s để tránh lag
-            Invoke("LoadNextScene", 0.5f);
+            // Load scene sau 0.2s để tránh lag
+            Invoke("LoadNextScene", 0.2f);
         }
     }
 
