@@ -4,13 +4,21 @@ using UnityEngine;
 public class BossMap3Controller : Enemy
 {
     public Animator animator;
-    public float attackCooldown = 1f; // Thời gian giữa các lần gây sát thương
+    public float attackCooldown = 1f;
     private float lastAttackTime = 0f;
+
     [SerializeField] private GameObject manaObject;
     [SerializeField] private GameObject effectObject;
-    [SerializeField] private GameObject nextText; // Tham chiếu đến "-> Next"
-    [SerializeField] private GameObject nextCheckpoint; // Checkpoint để qua màn
-    public bool IsKilledBoss { get; private set; } = false; // Dùng property
+    [SerializeField] private GameObject nextText;
+    [SerializeField] private GameObject nextCheckpoint;
+
+    public bool IsKilledBoss { get; private set; } = false;
+
+    [Header("Sát thương kỹ năng")]
+    public float attack1Damage = 20f; // Sát thương của chiêu 1
+    public float attack2Damage = 35f; // Sát thương của chiêu 2
+
+    private string currentAttack = ""; // Biến lưu chiêu đang dùng
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,21 +27,30 @@ public class BossMap3Controller : Enemy
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.TakeDame(enterDamage);
                 animator.SetBool("IsMoving", false);
-
-                animator.Play("BossMap3Attack1"); // Chạy animation trực tiếp
                 animator.SetBool("IsAttacking", true);
 
-                Debug.Log("🔴 Đã kích hoạt Attack Animation");
+                // Ngẫu nhiên chọn giữa Attack1 và Attack2
+                if (Random.value > 0.5f)
+                {
+                   
+                    currentAttack = "BossMap3Attack1";
+                    player.TakeDame(attack1Damage);
+                }
+                else
+                {
+                    currentAttack = "BossMap3Attack2";
+                    player.TakeDame(attack2Damage);
+                }
+
+                animator.Play(currentAttack);
+                Debug.Log($"🔴 Boss dùng {currentAttack}, gây {GetAttackDamage()} sát thương.");
             }
         }
     }
 
-
-
-    public float damageInterval = 0.3f; // Thời gian giữa các lần gây sát thương
-    private bool isDamaging = false; // Kiểm soát tránh gây sát thương liên tục mỗi frame
+    public float damageInterval = 0.3f;
+    private bool isDamaging = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -43,7 +60,6 @@ public class BossMap3Controller : Enemy
             {
                 animator.SetBool("IsAttacking", true);
                 animator.SetBool("IsMoving", false);
-                Debug.Log("🔴 Boss bắt đầu tấn công Player");
             }
 
             if (!isDamaging)
@@ -53,86 +69,33 @@ public class BossMap3Controller : Enemy
         }
     }
 
-
     private IEnumerator DealDamageOverTime(PlayerController player)
     {
         isDamaging = true;
-        while (player != null && isDamaging) // Chỉ tiếp tục nếu player còn trong vùng quái
+        while (player != null && isDamaging)
         {
-            player.TakeDame(stayDamage);
+            player.TakeDame(GetAttackDamage());
+            Debug.Log($"🔥 Boss tiếp tục gây {GetAttackDamage()} sát thương với {currentAttack}!");
 
-            Debug.Log("🔥 Gây sát thương liên tục cho Player!");
             yield return new WaitForSeconds(damageInterval);
         }
         isDamaging = false;
     }
 
-
+    private float GetAttackDamage()
+    {
+        return currentAttack == "BossMap3Attack1" ? attack1Damage : attack2Damage;
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (animator.GetBool("IsAttacking"))
-            {
-                animator.SetBool("IsAttacking", false);
-                animator.SetBool("IsMoving", true);
-                Debug.Log("⚠️ Boss ngừng tấn công, chuyển về trạng thái di chuyển");
-            }
+            animator.SetBool("IsAttacking", false);
+            animator.SetBool("IsMoving", true);
 
-            StopAllCoroutines(); // Dừng gây sát thương khi Player rời đi
+            StopAllCoroutines();
             isDamaging = false;
         }
     }
-
-
-    protected override void Die()
-    {
-        Vector3 effectPosition = transform.position;
-
-        // Raycast kiểm tra vị trí mặt đất để đặt hiệu ứng chết
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
-        if (hit.collider != null)
-        {
-            effectPosition.y = hit.point.y + 0.8f;
-        }
-
-        // ✅ Tạo hiệu ứng chết (Luôn có)
-        if (effectObject != null)
-        {
-            GameObject effectDie = Instantiate(effectObject, effectPosition, Quaternion.identity);
-            Destroy(effectDie, 0.5f);
-        }
-
-        // ✅ Nếu có manaObject thì spawn
-        if (manaObject != null)
-        {
-            Vector3 spawnPosition = transform.position;
-
-            // Kiểm tra vị trí để spawn mana trên mặt đất
-            if (hit.collider != null)
-            {
-                spawnPosition.y = hit.point.y + 0.05f;
-            }
-
-            GameObject mana = Instantiate(manaObject, spawnPosition, Quaternion.identity);
-            Destroy(mana, 10f);
-        }
-
-        base.Die();
-        if (isBoss)
-        {
-            IsKilledBoss = true;
-        }
-        if (isBoss && IsKilledBoss) // Nếu là boss thì hiển thị "Next" và mở checkpoint
-        {
-            if (nextText != null)
-                nextText.SetActive(true); // Hiện chữ "-> Next"
-
-            if (nextCheckpoint != null)
-                nextCheckpoint.SetActive(true); // Bật trigger qua màn
-        }
-    }
-
-
 }

@@ -4477,9 +4477,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogNPC:
-  - hello
-  - anh
-  - nhan
+  - "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i."
+  - "Th\u1EBF gi\u1EDBi \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5.
+    Oblivion \u0111\xE3 chi\u1EBFm gi\u1EEF b\u1ED1n vi\xEAn ng\u1ECDc nguy\xEAn
+    t\u1ED1 v\xE0 \u0111ang thao t\xFAng s\u1EE9c m\u1EA1nh c\u1EE7a thi\xEAn nhi\xEAn
+    theo \xFD ch\xFAng."
+  - " N\u1EBFu kh\xF4ng ng\u0103n ch\u1EB7n k\u1ECBp th\u1EDDi, lo\xE0i ng\u01B0\u1EDDi
+    s\u1EBD bi\u1EBFn m\u1EA5t m\xE3i m\xE3i."
+  - "Nh\u01B0ng ta tin r\u1EB1ng v\u1EABn c\xF2n m\u1ED9t c\u01A1 h\u1ED9i..."
+  - "N\u1EBFu anh c\xF3 th\u1EC3 thu th\u1EADp c\xE1c Eden Relics, ch\xFAng ta c\xF3
+    th\u1EC3 \u0111\u1EA3o ng\u01B0\u1EE3c t\xECnh th\u1EBF."
+  - "Nh\u1EEFng c\u1ED5 v\u1EADt n\xE0y ch\u1EE9a \u0111\u1EF1ng s\u1EE9c m\u1EA1nh
+    c\u1ED5 \u0111\u1EA1i, th\u1EE9 duy nh\u1EA5t c\xF3 th\u1EC3 \u0111\xE1nh b\u1EA1i
+    Oblivion."
+  - "H\xE3y c\u1EE9u l\u1EA5y th\u1EBF gi\u1EDBi..."
   dialogPanel: {fileID: 1255039980}
   dialogText: {fileID: 1352579284}
   nameNpc: {fileID: 842484503}
@@ -4654,7 +4665,7 @@ Transform:
   m_GameObject: {fileID: 1110046275}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9999977, z: -0, w: 0.0021849799}
-  m_LocalPosition: {x: 1.13, y: 0.12, z: 0}
+  m_LocalPosition: {x: -0.26, y: 0.12, z: -0.01}
   m_LocalScale: {x: 2.01, y: 2.01, z: 2.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9254,6 +9265,10 @@ PrefabInstance:
       propertyPath: manaObject
       value: 
       objectReference: {fileID: 4615031869965830469, guid: d375690391db7ba47bab2b53e79942c4, type: 3}
+    - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
+      propertyPath: detectionRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4644482758953659471, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: m_Camera
       value: 

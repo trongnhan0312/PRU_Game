@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float shotDelay = 0.15f;
     private float nextShot;
     [SerializeField] private int maxMana = 24;
-    public float currentMana;
+
 
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 1f;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image manaBar; // Thanh màu xanh (UI Image)
     [SerializeField] protected float maxHp = 100f;
     protected float currentHp;
+    public float currentMana;
     [SerializeField] private Image hpBar;
 
     [SerializeField] private GameManager gameManager;
