@@ -278,6 +278,11 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        if (collision.CompareTag("Trap"))
+        {
+            Debug.Log("🔥 Va chạm với Trap!");
+            Die();
+        }
     }
     private void UpdateAmmoManaText()
     {
