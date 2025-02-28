@@ -1,41 +1,43 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem; // Thêm thư viện
+using UnityEngine.InputSystem;
 
 public class NPCDialog : MonoBehaviour
 {
-    public string[] dialogNPC;
+    [System.Serializable]
+    public struct DialogEntry
+    {
+        public string speakerName;
+        public Sprite speakerSprite;
+        [TextArea(3, 5)] public string dialogText;
+        public AudioClip voiceClip; // Thêm âm thanh hội thoại
+    }
+
+    public DialogEntry[] dialogEntries;
     private int dialogIndex;
 
     public GameObject dialogPanel;
     public Text dialogText;
-
     public Text nameNpc;
     public Image imageNpc;
-    public Sprite spritesNpc;
+    public AudioSource audioSource; // Thêm AudioSource
 
     private bool readyToSpeak;
     private bool isTyping;
-
-    private GameObject[] enemies; // Mảng chứa tất cả quái vật
+    private GameObject[] enemies;
     public GameObject nextLv;
 
     void Start()
     {
         dialogPanel.SetActive(false);
         dialogIndex = 0;
-        imageNpc.sprite = spritesNpc;
-
-        // Tìm tất cả quái vật có tag "Enemy"
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        // Ẩn tất cả quái vật khi game bắt đầu
         foreach (GameObject enemy in enemies)
         {
             enemy.SetActive(false);
             nextLv.SetActive(false);
-            
         }
     }
 
@@ -71,7 +73,7 @@ public class NPCDialog : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             readyToSpeak = false;
-            if (dialogPanel.activeSelf) // Chỉ kết thúc khi đang hội thoại
+            if (dialogPanel.activeSelf)
             {
                 EndConversation();
             }
@@ -88,7 +90,7 @@ public class NPCDialog : MonoBehaviour
     private void ContinueConversation()
     {
         dialogIndex++;
-        if (dialogIndex < dialogNPC.Length)
+        if (dialogIndex < dialogEntries.Length)
         {
             StartCoroutine(ShowDialog());
         }
@@ -102,9 +104,8 @@ public class NPCDialog : MonoBehaviour
     {
         dialogPanel.SetActive(false);
         dialogIndex = 0;
-        gameObject.SetActive(false); // Ẩn NPC sau khi nói chuyện xong
+        gameObject.SetActive(false);
 
-        // Hiện tất cả quái vật có tag "Enemy"
         foreach (GameObject enemy in enemies)
         {
             enemy.SetActive(true);
@@ -116,18 +117,35 @@ public class NPCDialog : MonoBehaviour
     {
         isTyping = true;
         dialogText.text = "";
-        foreach (char letter in dialogNPC[dialogIndex])
+        nameNpc.text = dialogEntries[dialogIndex].speakerName;
+        imageNpc.sprite = dialogEntries[dialogIndex].speakerSprite;
+
+        // Chơi âm thanh nếu có
+        if (dialogEntries[dialogIndex].voiceClip != null && audioSource != null)
+        {
+            audioSource.clip = dialogEntries[dialogIndex].voiceClip;
+            audioSource.Play();
+        }
+
+        foreach (char letter in dialogEntries[dialogIndex].dialogText)
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(0.05f);
         }
+
         isTyping = false;
     }
 
     private void SkipTyping()
     {
         StopAllCoroutines();
-        dialogText.text = dialogNPC[dialogIndex];
+        dialogText.text = dialogEntries[dialogIndex].dialogText;
         isTyping = false;
+
+        // Dừng âm thanh nếu có
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 }
