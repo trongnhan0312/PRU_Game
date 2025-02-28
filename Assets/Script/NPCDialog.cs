@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem; // Thêm thư viện
 
 public class NPCDialog : MonoBehaviour
 {
@@ -17,16 +18,30 @@ public class NPCDialog : MonoBehaviour
     private bool readyToSpeak;
     private bool isTyping;
 
+    private GameObject[] enemies; // Mảng chứa tất cả quái vật
+    public GameObject nextLv;
+
     void Start()
     {
         dialogPanel.SetActive(false);
         dialogIndex = 0;
         imageNpc.sprite = spritesNpc;
+
+        // Tìm tất cả quái vật có tag "Enemy"
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        // Ẩn tất cả quái vật khi game bắt đầu
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(false);
+            nextLv.SetActive(false);
+            
+        }
     }
 
     void Update()
     {
-        if (readyToSpeak && Input.GetKeyDown(KeyCode.E))
+        if (readyToSpeak && Keyboard.current.eKey.wasPressedThisFrame)
         {
             if (!dialogPanel.activeSelf)
             {
@@ -63,7 +78,6 @@ public class NPCDialog : MonoBehaviour
         }
     }
 
-
     private void StartConversation()
     {
         dialogPanel.SetActive(true);
@@ -88,9 +102,15 @@ public class NPCDialog : MonoBehaviour
     {
         dialogPanel.SetActive(false);
         dialogIndex = 0;
-        gameObject.SetActive(false); // Làm NPC biến mất
-    }
+        gameObject.SetActive(false); // Ẩn NPC sau khi nói chuyện xong
 
+        // Hiện tất cả quái vật có tag "Enemy"
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(true);
+            nextLv.SetActive(true);
+        }
+    }
 
     private IEnumerator ShowDialog()
     {

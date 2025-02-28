@@ -9,11 +9,12 @@ public class PlayerCollision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       /* if (collision.CompareTag("Mana") || collision.CompareTag("Watermelon"))
+
+        if (collision.CompareTag("KC"))
         {
             Destroy(collision.gameObject);
             gameManager.AddScore(1);
-        }*/
+        }
 
     }
 }

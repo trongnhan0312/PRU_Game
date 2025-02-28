@@ -43,6 +43,7 @@ public class EnemyMap1 : Enemy
         while (player != null && isDamaging) // Chỉ tiếp tục nếu player còn trong vùng quái
         {
             player.TakeDame(stayDamage);
+
             Debug.Log("🔥 Gây sát thương liên tục cho Player!");
             yield return new WaitForSeconds(damageInterval);
         }

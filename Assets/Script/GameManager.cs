@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject MapSelection;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +40,15 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 0;
     }
+    public void mapSelection()
+    {
+
+       MapSelection.SetActive(true);
+        mainMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        Time.timeScale = 0f;
+    }
     public void GameOverMenu()
     {
         gameOverMenu.SetActive(true);
@@ -55,11 +65,22 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-       mainMenu.SetActive(false);
-       gameOverMenu.SetActive(false);
+        mainMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
+        MapSelection.SetActive(false); 
         Time.timeScale = 1f;
     }
+    public void Map()
+    {
+        mainMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        MapSelection.SetActive(true); // Hiển thị MapSelection
+        Time.timeScale = 0f;
+    }
+
+
     public void ResumeGame()
     {
         mainMenu.SetActive(false);

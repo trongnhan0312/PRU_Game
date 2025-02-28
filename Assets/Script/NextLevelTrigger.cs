@@ -14,6 +14,7 @@ public class NextLevelTrigger : MonoBehaviour
     private bool IsBossDefeated()
     {
         EnemyMap1[] bosses = FindObjectsOfType<EnemyMap1>(); // Tìm tất cả EnemyMap1 trong scene
+       
         foreach (EnemyMap1 boss in bosses)
         {
             if (boss.isBoss && !boss.IsKilledBoss) // Nếu có boss chưa chết thì không thể qua màn
@@ -40,8 +41,8 @@ public class NextLevelTrigger : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Static; // Đặt Player thành Static để không đi xuyên
             }
 
-            // Load scene sau 0.5s để tránh lag
-            Invoke("LoadNextScene", 0.5f);
+            // Load scene sau 0.2s để tránh lag
+            Invoke("LoadNextScene", 0.2f);
         }
     }
 

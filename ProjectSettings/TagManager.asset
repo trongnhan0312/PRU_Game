@@ -11,6 +11,7 @@ TagManager:
   - KC
   - Wall
   - NPC
+  - NextLevel
   layers:
   - Default
   - TransparentFX
