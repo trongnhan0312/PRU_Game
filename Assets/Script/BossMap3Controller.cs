@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BossMap3Controller : Enemy
+public class BossMap3Controller : Boss
 {
     public Animator animator;
     public float attackCooldown = 1f;
@@ -33,7 +33,7 @@ public class BossMap3Controller : Enemy
                 // Ngẫu nhiên chọn giữa Attack1 và Attack2
                 if (Random.value > 0.5f)
                 {
-                   
+
                     currentAttack = "BossMap3Attack1";
                     player.TakeDame(attack1Damage);
                 }
