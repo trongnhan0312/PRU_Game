@@ -4682,7 +4682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -611.9999, y: -13.000122}
+  m_AnchoredPosition: {x: -612, y: -13.000122}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605400842
@@ -7119,26 +7119,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e0842b4b0a14f459ff21098942301a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogNPC:
-  - "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i."
-  - "Th\u1EBF gi\u1EDBi \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5.
-    Oblivion \u0111\xE3 chi\u1EBFm gi\u1EEF b\u1ED1n vi\xEAn ng\u1ECDc nguy\xEAn
-    t\u1ED1 v\xE0 \u0111ang thao t\xFAng s\u1EE9c m\u1EA1nh c\u1EE7a thi\xEAn nhi\xEAn
-    theo \xFD ch\xFAng."
-  - " N\u1EBFu kh\xF4ng ng\u0103n ch\u1EB7n k\u1ECBp th\u1EDDi, lo\xE0i ng\u01B0\u1EDDi
-    s\u1EBD bi\u1EBFn m\u1EA5t m\xE3i m\xE3i."
-  - "Nh\u01B0ng ta tin r\u1EB1ng v\u1EABn c\xF2n m\u1ED9t c\u01A1 h\u1ED9i..."
-  - "N\u1EBFu anh c\xF3 th\u1EC3 thu th\u1EADp c\xE1c Eden Relics, ch\xFAng ta c\xF3
-    th\u1EC3 \u0111\u1EA3o ng\u01B0\u1EE3c t\xECnh th\u1EBF."
-  - "Nh\u1EEFng c\u1ED5 v\u1EADt n\xE0y ch\u1EE9a \u0111\u1EF1ng s\u1EE9c m\u1EA1nh
-    c\u1ED5 \u0111\u1EA1i, th\u1EE9 duy nh\u1EA5t c\xF3 th\u1EC3 \u0111\xE1nh b\u1EA1i
-    Oblivion."
-  - "H\xE3y c\u1EE9u l\u1EA5y th\u1EBF gi\u1EDBi..."
+  dialogEntries:
+  - speakerName: SW
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: "(H\u1EDBt h\u1EA3i ch\u1EA1y \u0111\u1EBFn) Dr. Ezreal! Chuy\u1EC7n
+      g\xEC \u0111ang x\u1EA3y ra v\u1EADy? C\u0103n c\u1EE9 tr\xF4ng th\u1EADt h\u1ED7n
+      lo\u1EA1n!"
+    voiceClip: {fileID: 0}
+  - speakerName: NPC
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i. Th\u1EBF gi\u1EDBi
+      \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5..."
+    voiceClip: {fileID: 0}
+  - speakerName: NPC
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "Oblivion \u0111\xE3 chi\u1EBFm gi\u1EEF b\u1ED1n vi\xEAn ng\u1ECDc
+      nguy\xEAn t\u1ED1: L\u1EEDa, N\u01B0\u1EDBc, \u0110\u1EA5t, v\xE0 Gi\xF3. Ch\xFAng
+      \u0111ang thao t\xFAng s\u1EE9c m\u1EA1nh c\u1EE7a thi\xEAn nhi\xEAn theo \xFD
+      mu\u1ED1n c\u1EE7a m\xECnh"
+    voiceClip: {fileID: 0}
+  - speakerName: NPC
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "C\xE1c th\xE0nh ph\u1ED1 l\u1EDBn \u0111\xE3 b\u1ECB nh\u1EA5n ch\xECm
+      trong bi\u1EC3n l\u1EEDa v\xE0 b\xE3o t\u1ED1. Nh\u1EEFng khu r\u1EEBng xanh
+      gi\u1EDD \u0111\xE2y ch\u1EC9 c\xF2n l\xE0 \u0111\u1ED1ng tro t\xE0n. Tr\xE1i
+      \u0111\u1EA5t \u0111ang d\u1EA7n m\u1EA5t \u0111i s\u1EF1 s\u1ED1ng."
+    voiceClip: {fileID: 0}
+  - speakerName: NPC
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "N\u1EBFu ch\xFAng ta kh\xF4ng h\xE0nh \u0111\u1ED9ng ngay b\xE2y
+      gi\u1EDD, ch\u1EC9 trong v\xE0i ng\xE0y n\u1EEFa, Oblivion s\u1EBD ho\xE0n
+      to\xE0n ki\u1EC3m so\xE1t th\u1EBF gi\u1EDBi n\xE0y. L\xFAc \u0111\xF3, lo\xE0i
+      ng\u01B0\u1EDDi s\u1EBD kh\xF4ng c\xF2n c\u01A1 h\u1ED9i n\xE0o \u0111\u1EC3
+      t\u1ED3n t\u1EA1i."
+    voiceClip: {fileID: 0}
+  - speakerName: SW
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: "(Nghi\u1EBFn r\u0103ng) Kh\xF4ng th\u1EC3 n\xE0o... Ch\xFAng ta
+      c\xF3 c\xE1ch n\xE0o \u0111\u1EC3 ng\u0103n ch\u1EB7n ch\xFAng kh\xF4ng?"
+    voiceClip: {fileID: 0}
+  - speakerName: NPC
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "C\xF3 m\u1ED9t hy v\u1ECDng duy nh\u1EA5t. Eden Relics \u2013 nh\u1EEFng
+      c\u1ED5 v\u1EADt ch\u1EE9a \u0111\u1EF1ng s\u1EE9c m\u1EA1nh c\u1ED5 \u0111\u1EA1i,
+      th\u1EE9 duy nh\u1EA5t c\xF3 th\u1EC3 \u0111\u1ED1i ch\u1ECDi v\u1EDBi s\u1EE9c
+      m\u1EA1nh c\u1EE7a Oblivion."
+    voiceClip: {fileID: 0}
+  - speakerName: SW
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: "Eden Relics? T\xF4i ch\u01B0a t\u1EEBng nghe v\u1EC1 ch\xFAng..."
+    voiceClip: {fileID: 0}
+  - speakerName: NPC
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "Ch\xFAng \u0111\xE3 b\u1ECB th\u1EA5t l\u1EA1c t\u1EEB h\xE0ng ngh\xECn
+      n\u0103m tr\u01B0\u1EDBc. Nh\u01B0ng theo nh\u1EEFng t\xE0i li\u1EC7u c\u1ED5
+      m\xE0 t\xF4i t\xECm \u0111\u01B0\u1EE3c, vi\xEAn \u0111\u1EA7u ti\xEAn n\u1EB1m
+      s\xE2u trong t\xE0n t\xEDch c\u1EE7a Doomed Horizon."
+    voiceClip: {fileID: 0}
+  - speakerName: SW
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
+    voiceClip: {fileID: 0}
   dialogPanel: {fileID: 1255039980}
   dialogText: {fileID: 1352579284}
   nameNpc: {fileID: 842484503}
   imageNpc: {fileID: 1149761296}
-  spritesNpc: {fileID: 2911438479801081530, guid: 9522a50cf1a6e4b44b90af4f0b6a5fcd, type: 3}
+  audioSource: {fileID: 0}
   nextLv: {fileID: 1117488713}
 --- !u!61 &1110046277
 BoxCollider2D:
@@ -8414,7 +8460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 560, y: -18}
+  m_AnchoredPosition: {x: 560, y: -17.999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298459657
@@ -11114,7 +11160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1535920434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11353,7 +11399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -611.9999, y: -13.000122}
+  m_AnchoredPosition: {x: -612, y: -13.000122}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582671526
@@ -12677,7 +12723,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1831568876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13001,7 +13047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17, y: -18}
+  m_AnchoredPosition: {x: -17, y: -17.999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989819519
