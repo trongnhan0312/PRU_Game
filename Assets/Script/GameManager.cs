@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Rendering.LookDev;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject MapSelection;
+    public GameObject InfoButton;
+    public GameObject guidePanel;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +27,15 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
+    public void ToggleGuidePanel()
+    {
+        bool isActive = !guidePanel.activeSelf;
+        guidePanel.SetActive(isActive);
+        //foreach (GameObject obj in objectsToDisable)
+        //{
+        //    obj.SetActive(!isActive);
+        //}
+    }
     public void AddScore(int point)
     {
         score += point;
