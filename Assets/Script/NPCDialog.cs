@@ -1,28 +1,43 @@
-﻿    using System.Collections;
-    using UnityEngine;
-    using UnityEngine.UI;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem; // Thêm thư viện
+
 public class NPCDialog : MonoBehaviour
+{
+    public string[] dialogNPC;
+    private int dialogIndex;
+
+    public GameObject dialogPanel;
+    public Text dialogText;
+
+    public Text nameNpc;
+    public Image imageNpc;
+    public Sprite spritesNpc;
+
+    private bool readyToSpeak;
+    private bool isTyping;
+
+    private GameObject[] enemies; // Mảng chứa tất cả quái vật
+    public GameObject nextLv;
+
+    void Start()
     {
-        public string[] dialogNPC;
-        private int dialogIndex;
+        dialogPanel.SetActive(false);
+        dialogIndex = 0;
+        imageNpc.sprite = spritesNpc;
 
-        public GameObject dialogPanel;
-        public Text dialogText;
+        // Tìm tất cả quái vật có tag "Enemy"
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        public Text nameNpc;
-        public Image imageNpc;
-        public Sprite spritesNpc;
-
-        private bool readyToSpeak;
-        private bool isTyping;
-
-        void Start()
+        // Ẩn tất cả quái vật khi game bắt đầu
+        foreach (GameObject enemy in enemies)
         {
-            dialogPanel.SetActive(false);
-            dialogIndex = 0;
-            imageNpc.sprite = spritesNpc;
+            enemy.SetActive(false);
+            nextLv.SetActive(false);
+            
         }
+    }
 
     void Update()
     {
@@ -44,70 +59,75 @@ public class NPCDialog : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-                readyToSpeak = true;
-            }
+            readyToSpeak = true;
         }
+    }
 
-        private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-                readyToSpeak = false;
-                if (dialogPanel.activeSelf) // Chỉ kết thúc khi đang hội thoại
-                {
-                    EndConversation();
-                }
-            }
-        }
-
-
-        private void StartConversation()
-        {
-            dialogPanel.SetActive(true);
-            dialogIndex = 0;
-            StartCoroutine(ShowDialog());
-        }
-
-        private void ContinueConversation()
-        {
-            dialogIndex++;
-            if (dialogIndex < dialogNPC.Length)
-            {
-                StartCoroutine(ShowDialog());
-            }
-            else
+            readyToSpeak = false;
+            if (dialogPanel.activeSelf) // Chỉ kết thúc khi đang hội thoại
             {
                 EndConversation();
             }
         }
+    }
 
-        private void EndConversation()
+    private void StartConversation()
+    {
+        dialogPanel.SetActive(true);
+        dialogIndex = 0;
+        StartCoroutine(ShowDialog());
+    }
+
+    private void ContinueConversation()
+    {
+        dialogIndex++;
+        if (dialogIndex < dialogNPC.Length)
         {
-            dialogPanel.SetActive(false);
-            dialogIndex = 0;
-            gameObject.SetActive(false); // Làm NPC biến mất
+            StartCoroutine(ShowDialog());
         }
-
-
-        private IEnumerator ShowDialog()
+        else
         {
-            isTyping = true;
-            dialogText.text = "";
-            foreach (char letter in dialogNPC[dialogIndex])
-            {
-                dialogText.text += letter;
-                yield return new WaitForSeconds(0.05f);
-            }
-            isTyping = false;
-        }
-
-        private void SkipTyping()
-        {
-            StopAllCoroutines();
-            dialogText.text = dialogNPC[dialogIndex];
-            isTyping = false;
+            EndConversation();
         }
     }
+
+    private void EndConversation()
+    {
+        dialogPanel.SetActive(false);
+        dialogIndex = 0;
+        gameObject.SetActive(false); // Ẩn NPC sau khi nói chuyện xong
+
+        // Hiện tất cả quái vật có tag "Enemy"
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(true);
+            nextLv.SetActive(true);
+        }
+    }
+
+    private IEnumerator ShowDialog()
+    {
+        isTyping = true;
+        dialogText.text = "";
+        foreach (char letter in dialogNPC[dialogIndex])
+        {
+            dialogText.text += letter;
+            yield return new WaitForSeconds(0.05f);
+        }
+        isTyping = false;
+    }
+
+    private void SkipTyping()
+    {
+        StopAllCoroutines();
+        dialogText.text = dialogNPC[dialogIndex];
+        isTyping = false;
+    }
+}

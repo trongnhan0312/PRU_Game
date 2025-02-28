@@ -14,6 +14,7 @@ public class NextLevelTrigger : MonoBehaviour
     private bool IsBossDefeated()
     {
         EnemyMap1[] bosses = FindObjectsOfType<EnemyMap1>(); // Tìm tất cả EnemyMap1 trong scene
+       
         foreach (EnemyMap1 boss in bosses)
         {
             if (boss.isBoss && !boss.IsKilledBoss) // Nếu có boss chưa chết thì không thể qua màn
