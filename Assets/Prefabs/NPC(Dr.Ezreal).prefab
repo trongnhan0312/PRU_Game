@@ -1,0 +1,276 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4223529138487944563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6215909680237693351}
+  - component: {fileID: 7156691715310416470}
+  - component: {fileID: 5676337615659972978}
+  - component: {fileID: 5246597557222010787}
+  - component: {fileID: 4659571320358665251}
+  - component: {fileID: 2210206556098237478}
+  m_Layer: 0
+  m_Name: NPC(Dr.Ezreal)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6215909680237693351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9999977, z: -0, w: 0.0021849799}
+  m_LocalPosition: {x: -0.26, y: 0.12, z: -0.01}
+  m_LocalScale: {x: 2.01, y: 2.01, z: 2.01}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 179.75, z: 0}
+--- !u!212 &7156691715310416470
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 824001451
+  m_SortingLayer: 14
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 4723107735738678597, guid: 48bc5f6c3766c7244b8a2090b367d98c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.25, y: 1.109375}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &5676337615659972978
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3f34a7530395cf4d93a594d6d4b1a9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &5246597557222010787
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.02, y: 0}
+  m_Size: {x: 0.35, y: 1.109375}
+  m_Direction: 0
+--- !u!61 &4659571320358665251
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.005310923, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.109375}
+    newSize: {x: 1.25, y: 1.109375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.9179992, y: 1.109375}
+  m_EdgeRadius: 0
+--- !u!114 &2210206556098237478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e0842b4b0a14f459ff21098942301a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogEntries:
+  - speakerName: Nova
+    speakerSprite: {fileID: 21300000, guid: cee0f3d723836fb45aff84dd2bc4b349, type: 3}
+    dialogText: " Dr. Ezreal! Chuy\u1EC7n g\xEC \u0111ang x\u1EA3y ra v\u1EADy? C\u0103n
+      c\u1EE9 tr\xF4ng th\u1EADt h\u1ED7n lo\u1EA1n!"
+    voiceClip: {fileID: 0}
+  - speakerName: Dr.Ezreal
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i. Th\u1EBF gi\u1EDBi
+      \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5..."
+    voiceClip: {fileID: 0}
+  - speakerName: Dr.Ezreal
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "Oblivion \u0111\xE3 chi\u1EBFm gi\u1EEF b\u1ED1n vi\xEAn ng\u1ECDc
+      nguy\xEAn t\u1ED1: L\u1EEDa, N\u01B0\u1EDBc, \u0110\u1EA5t, v\xE0 Gi\xF3. Ch\xFAng
+      \u0111ang thao t\xFAng s\u1EE9c m\u1EA1nh c\u1EE7a thi\xEAn nhi\xEAn theo \xFD
+      mu\u1ED1n c\u1EE7a m\xECnh"
+    voiceClip: {fileID: 0}
+  - speakerName: Dr.Ezreal
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "C\xE1c th\xE0nh ph\u1ED1 l\u1EDBn \u0111\xE3 b\u1ECB nh\u1EA5n ch\xECm
+      trong bi\u1EC3n l\u1EEDa v\xE0 b\xE3o t\u1ED1. Nh\u1EEFng khu r\u1EEBng xanh
+      gi\u1EDD \u0111\xE2y ch\u1EC9 c\xF2n l\xE0 \u0111\u1ED1ng tro t\xE0n. Tr\xE1i
+      \u0111\u1EA5t \u0111ang d\u1EA7n m\u1EA5t \u0111i s\u1EF1 s\u1ED1ng."
+    voiceClip: {fileID: 0}
+  - speakerName: Dr.Ezreal
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "N\u1EBFu ch\xFAng ta kh\xF4ng h\xE0nh \u0111\u1ED9ng ngay b\xE2y
+      gi\u1EDD, ch\u1EC9 trong v\xE0i ng\xE0y n\u1EEFa, Oblivion s\u1EBD ho\xE0n
+      to\xE0n ki\u1EC3m so\xE1t th\u1EBF gi\u1EDBi n\xE0y. L\xFAc \u0111\xF3, lo\xE0i
+      ng\u01B0\u1EDDi s\u1EBD kh\xF4ng c\xF2n c\u01A1 h\u1ED9i n\xE0o \u0111\u1EC3
+      t\u1ED3n t\u1EA1i."
+    voiceClip: {fileID: 0}
+  - speakerName: Nova
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: " Kh\xF4ng th\u1EC3 n\xE0o... Ch\xFAng ta c\xF3 c\xE1ch n\xE0o \u0111\u1EC3
+      ng\u0103n ch\u1EB7n ch\xFAng kh\xF4ng?"
+    voiceClip: {fileID: 0}
+  - speakerName: Nova
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "C\xF3 m\u1ED9t hy v\u1ECDng duy nh\u1EA5t. Eden Relics \u2013 nh\u1EEFng
+      c\u1ED5 v\u1EADt ch\u1EE9a \u0111\u1EF1ng s\u1EE9c m\u1EA1nh c\u1ED5 \u0111\u1EA1i,
+      th\u1EE9 duy nh\u1EA5t c\xF3 th\u1EC3 \u0111\u1ED1i ch\u1ECDi v\u1EDBi s\u1EE9c
+      m\u1EA1nh c\u1EE7a Oblivion."
+    voiceClip: {fileID: 0}
+  - speakerName: Nova
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: "Eden Relics? T\xF4i ch\u01B0a t\u1EEBng nghe v\u1EC1 ch\xFAng..."
+    voiceClip: {fileID: 0}
+  - speakerName: Dr.Ezreal
+    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    dialogText: "Ch\xFAng \u0111\xE3 b\u1ECB th\u1EA5t l\u1EA1c t\u1EEB h\xE0ng ngh\xECn
+      n\u0103m tr\u01B0\u1EDBc. Nh\u01B0ng theo nh\u1EEFng t\xE0i li\u1EC7u c\u1ED5
+      m\xE0 t\xF4i t\xECm \u0111\u01B0\u1EE3c, vi\xEAn \u0111\u1EA7u ti\xEAn n\u1EB1m
+      s\xE2u trong t\xE0n t\xEDch c\u1EE7a Doomed Horizon."
+    voiceClip: {fileID: 0}
+  - speakerName: Nova
+    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    dialogText: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
+    voiceClip: {fileID: 0}
+  dialogPanel: {fileID: 0}
+  dialogText: {fileID: 0}
+  nameNpc: {fileID: 0}
+  imageNpc: {fileID: 0}
+  audioSource: {fileID: 0}
+  nextLv: {fileID: 0}
