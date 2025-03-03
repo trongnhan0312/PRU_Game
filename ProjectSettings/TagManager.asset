@@ -12,6 +12,8 @@ TagManager:
   - Wall
   - NPC
   - NextLevel
+  - Banana
+  - Trap
   layers:
   - Default
   - TransparentFX
