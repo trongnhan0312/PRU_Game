@@ -38,6 +38,15 @@ public class PlayerFireBall : MonoBehaviour
                 GameObject blood = Instantiate(bloodPrefab, transform.position, Quaternion.identity);
                 Destroy(blood, 1f);
             }
+
+            Boss boss = collision.GetComponent<Boss>();
+            if (boss != null)
+            {
+                boss.TakeDamage(damage);
+                GameObject bloodBoss = Instantiate(bloodPrefab, transform.position, Quaternion.identity);
+                Destroy(bloodBoss, 1f);
+            }
+
             Destroy(gameObject);
         }
     }

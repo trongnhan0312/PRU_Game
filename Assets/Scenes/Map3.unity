@@ -1230,6 +1230,17 @@ PrefabInstance:
       addedObject: {fileID: 320680217}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4890f7ce94355ab40ab9f6f2280aa3c0, type: 3}
+--- !u!114 &95915726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6958789147670619825, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
+  m_PrefabInstance: {fileID: 1520752847}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &320680216
 GameObject:
   m_ObjectHideFlags: 0
@@ -44177,19 +44188,19 @@ MonoBehaviour:
   chaseSpeed: 3.5
   patrolDistance: 3
   detectionRange: 5
-  maxHp: 50
-  hpBar: {fileID: 0}
+  maxHp: 300
+  hpBar: {fileID: 95915726}
   enterDamage: 10
-  stayDamage: 1
+  stayDamage: 0
   isBoss: 1
   animator: {fileID: 1386468062}
-  attackCooldown: 1
+  attackCooldown: 0.25
+  effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   manaObject: {fileID: 0}
-  effectObject: {fileID: 0}
   nextText: {fileID: 0}
   nextCheckpoint: {fileID: 0}
-  attack1Damage: 20
-  attack2Damage: 35
+  attack1Damage: 10
+  attack2Damage: 10
   damageInterval: 0.3
 --- !u!1 &1451036781
 GameObject:
@@ -87967,6 +87978,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 1217377754}
+    - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: manaBar
       value: 

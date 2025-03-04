@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BossMap3Controller : Boss
+public class BossMap2Controller : Boss
 {
     public Animator animator;
     public float attackCooldown = 1f;

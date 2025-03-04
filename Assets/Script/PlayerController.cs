@@ -157,15 +157,25 @@ public class PlayerController : MonoBehaviour
             if (enemy.CompareTag("Enemy")) // Kiểm tra tag Enemy
             {
                 Enemy enemyScript = enemy.GetComponent<Enemy>();
+                Boss boss = enemy.GetComponent<Boss>();
+
                 if (enemyScript != null)
                 {
                     enemyScript.TakeDamage(10f); // Gây 10 sát thương
-                    GameObject bloodEffect = Instantiate(blood, enemy.transform.position, quaternion.identity);
+                    GameObject bloodEffect = Instantiate(blood, enemy.transform.position, Quaternion.identity);
                     Destroy(bloodEffect, 1f);
+                }
+
+                if (boss != null)
+                {
+                    boss.TakeDamage(10f); // Gây 10 sát thương
+                    GameObject bloodEffectBoss = Instantiate(blood, boss.transform.position, Quaternion.identity);
+                    Destroy(bloodEffectBoss, 1f);
                 }
             }
         }
     }
+
 
     private void UpdateAmmoUI()
     {
