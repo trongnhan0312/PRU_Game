@@ -2,7 +2,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class PlayerController : MonoBehaviour
 {
 
@@ -12,54 +12,68 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     private Animator animator;
     private bool isGrounded;
+    [SerializeField] private float fallLimit = -10f;
     private Rigidbody2D rb;
 
 
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject bulletPrefabs;
-    [SerializeField] private float shotDelay=0.15f;
+    [SerializeField] private float shotDelay = 0.15f;
     private float nextShot;
-    [SerializeField] private int maxAmmo = 24;
-    public int currentAmmo;
-
+    [SerializeField] private int maxMana = 24;
+    public float currentMana;
 
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private float attackRange = 1f;
+    [SerializeField] private TextMeshProUGUI ammoManaText;
+    [SerializeField] private TextMeshProUGUI ammoHPText;
 
- 
-    [SerializeField] private LayerMask enemyLayers;
-
+    [SerializeField] GameObject blood;
+    private SpriteRenderer spriteRenderer;
     /* private GameManager gameManager;*/
 
-    [SerializeField] private Image ammoBar; // Thanh màu xanh (UI Image)
-    [SerializeField] private float maxHp = 100f;
-    private float currentHp;
-    [SerializeField] private Image HpBar;
+    [SerializeField] private Image manaBar; // Thanh màu xanh (UI Image)
+    [SerializeField] protected float maxHp = 100f;
+    protected float currentHp;
+    [SerializeField] private Image hpBar;
+
+    [SerializeField] private GameManager gameManager;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-/*        gameManager = FindAnyObjectByType<GameManager>();*/
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        /*        gameManager = FindAnyObjectByType<GameManager>();*/
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentAmmo=maxAmmo;
+        currentMana = maxMana;
         currentHp = maxHp;
         UpdateHpBar();
+        UpdateAmmoManaText();
+        UpdateAmmoHPText();
     }
 
     // Update is called once per frame
     void Update()
     {
-/*        if (gameManager.IsGameOver() || gameManager.IsGameWin()) return;*/
+        /*        if (gameManager.IsGameOver() || gameManager.IsGameWin()) return;*/
         HandleMovement();
         HandleJump();
         UpdateAnimation();
         HandleShoot();
         HandleAttack();
+        if (transform.position.y < fallLimit)
+        {
+            Die();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.PauseMenu();
+        }
 
     }
 
@@ -98,8 +112,9 @@ public class PlayerController : MonoBehaviour
             bullet.transform.localScale = bulletScale;
         }
 
-        currentAmmo--;
+        currentMana--;
         UpdateAmmoUI();
+        UpdateAmmoManaText();
     }
 
     private void HandleShoot()
@@ -110,7 +125,7 @@ public class PlayerController : MonoBehaviour
         // Nếu đang chạy hoặc đang nhảy thì không thể bắn
         if (isRunning || isJumping) return;
 
-        if (Input.GetMouseButtonDown(1) && currentAmmo > 0 && Time.time > nextShot)
+        if (Input.GetMouseButtonDown(1) && currentMana > 0 && Time.time > nextShot)
         {
             nextShot = Time.time + shotDelay;
             StartCoroutine(ShootRoutine());
@@ -120,77 +135,177 @@ public class PlayerController : MonoBehaviour
     {
         bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
         bool isJumping = !isGrounded;
-
-        // Nếu đang chạy hoặc nhảy thì không thể đánh
         if (isRunning || isJumping) return;
 
         if (Input.GetMouseButtonDown(0)) // Chuột trái để đánh
         {
             animator.SetTrigger("IsAttacking");
-            StartCoroutine(AttackRoutine());
+            animator.SetBool("IsHurt", false);
+            Attack(); // Gọi trực tiếp Attack()
         }
     }
 
 
-    private IEnumerator AttackRoutine()
-    {
-        yield return new WaitForSeconds(0.1f); // Đợi animation bắt đầu
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+    private void Attack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
-            if (enemyScript != null)
+            if (enemy.CompareTag("Enemy")) // Kiểm tra tag Enemy
             {
-               
+                Enemy enemyScript = enemy.GetComponent<Enemy>();
+                if (enemyScript != null)
+                {
+                    enemyScript.TakeDamage(10f); // Gây 10 sát thương
+                    GameObject bloodEffect = Instantiate(blood, enemy.transform.position, quaternion.identity);
+                    Destroy(bloodEffect, 1f);
+                }
             }
         }
     }
 
     private void UpdateAmmoUI()
     {
-        if (ammoBar != null)
-            ammoBar.fillAmount = (float)currentAmmo / maxAmmo;
+        if (manaBar != null)
+            manaBar.fillAmount = (float)currentMana / maxMana;
     }
 
     private void UpdateAnimation()
     {
         bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
         bool isJumping = !isGrounded;
+
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
-
     }
 
-    public void TakeDamage(float damage)
+
+    public void TakeDame(float damage)
     {
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
+        UpdateAmmoHPText();
+        StopAllCoroutines(); // Dừng tất cả animation trước đó để tránh bị ghi đè
+        animator.SetBool("IsHurt", true); // Chạy animation bị thương
+        StartCoroutine(HurtEffect());
+
         if (currentHp <= 0)
         {
             Die();
         }
     }
+
+
+
     private void Die()
     {
-        Destroy(gameObject);
+        gameManager.GameOverMenu();
     }
+
     private void UpdateHpBar()
     {
-        if (HpBar != null)
+        if (hpBar != null)
         {
-            HpBar.fillAmount = currentHp / maxHp;
+            hpBar.fillAmount = currentHp / maxHp;
         }
     }
-    private void OnDrawGizmos()
-{
-    if (attackPoint != null)
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
     }
-}
+    public void ResetHurtAnimation()
+    {
+        animator.SetBool("IsHurt", false);
+    }
 
+    // Hiệu ứng nhấp nháy đỏ
+    private IEnumerator HurtEffect()
+    {
+
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+
+    }
+    // ✅ Hàm cập nhật thanh mana
+    private void UpdateManaBar()
+    {
+        if (manaBar != null)
+        {
+            manaBar.fillAmount = currentMana / maxMana;
+        }
+    }
+
+    // ✅ Hàm tăng mana
+    public void IncreaseMana(float amount)
+    {
+        currentMana += amount;
+        currentMana = Mathf.Min(currentMana, maxMana); // Không vượt quá giới hạn
+        UpdateManaBar(); // Cập nhật UI
+        UpdateAmmoManaText();
+    }
+    public void IncreaseHP(float amount)
+    {
+        currentHp += amount;
+        currentHp = Mathf.Min(currentHp, maxHp); // Không vượt quá giới hạn
+        UpdateHpBar(); // Cập nhật UI
+        UpdateAmmoHPText();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Mana"))
+        {
+            Destroy(collision.gameObject);
+            IncreaseMana(2);
+            UpdateAmmoUI();// Cộng 2 Mana
+        }
+        if (collision.CompareTag("HP"))
+        {
+            Destroy(collision.gameObject);
+            IncreaseHP(20);
+            UpdateHpBar(); // Cộng 20 HP
+        }
+        if (collision.CompareTag("KC"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+    private void UpdateAmmoManaText()
+    {
+        if (ammoManaText != null)
+        {
+            if (currentMana > 0)
+            {
+                ammoManaText.text = currentMana.ToString();
+            }
+            else
+            {
+                ammoManaText.text = "Empty";
+            }
+        }
+
+    }
+    private void UpdateAmmoHPText()
+    {
+        if (ammoHPText != null)
+        {
+            if (currentHp > 0)
+            {
+                ammoHPText.text = currentHp.ToString();
+            }
+            else
+            {
+                ammoHPText.text = "0";
+            }
+        }
+
+    }
 }

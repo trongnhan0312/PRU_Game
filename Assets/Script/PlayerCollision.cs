@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Banana") || collision.CompareTag("Watermelon"))
+        if (collision.CompareTag("Mana") || collision.CompareTag("Watermelon"))
         {
             Destroy(collision.gameObject);
             gameManager.AddScore(1);

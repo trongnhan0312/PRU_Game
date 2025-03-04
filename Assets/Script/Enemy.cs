@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,18 +11,29 @@ public class Enemy : MonoBehaviour
     private bool isChasing = false, isAttacking = false;
     private Animator animator;
 
+    [SerializeField] protected float maxHp = 50f;
+    protected float currentHp;
+    [SerializeField] private Image hpBar;
+
+    [SerializeField] protected float enterDamage = 10f;
+    [SerializeField] protected float stayDamage = 1f;
+
+    private bool isHurt = false;
+    [SerializeField] public bool isBoss = false; // Đánh dấu boss
+
     private void Start()
     {
         startPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         animator = GetComponent<Animator>();
-
+        currentHp = maxHp;
+        UpdateHpBar();
         if (animator == null) Debug.LogError("⚠️ Animator chưa được gắn vào Enemy!");
     }
 
     private void Update()
     {
-        if (player == null) return;
+        if (player == null || isHurt) return; // Nếu bị tấn công, không di chuyển
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         float distanceFromStart = Mathf.Abs(player.position.x - startPos.x);
@@ -68,28 +81,60 @@ public class Enemy : MonoBehaviour
     private void Flip()
     {
         direction *= -1;
-        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y, transform.localScale.z);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+
+    // Coroutine để xử lý animation đánh + gây sát thương định kỳ
+    private IEnumerator AttackRoutine(PlayerController player)
     {
-        if (collision.CompareTag("Player"))
+        while (isAttacking && player != null)
         {
-            Debug.Log("🔥 Enemy bắt đầu tấn công Player!");
-            isAttacking = true;
-            animator.SetBool("IsAttacking", true);
-            animator.SetBool("IsMoving", false);
+            player.TakeDame(enterDamage); // Gây damage khi bắt đầu chạm
+            yield return new WaitForSeconds(1f); // Thời gian delay cho mỗi lần đánh
+            player.TakeDame(stayDamage); // Gây damage theo thời gian
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+
+    public void TakeDamage(float damage)
     {
-        if (collision.CompareTag("Player"))
+        currentHp -= damage;
+        currentHp = Mathf.Max(currentHp, 0);
+        UpdateHpBar();
+
+        if (!isHurt) // Chỉ dừng di chuyển khi lần đầu bị tấn công
         {
-            Debug.Log("⚡ Enemy ngừng tấn công!");
-            isAttacking = false;
-            animator.SetBool("IsAttacking", false);
-            animator.SetBool("IsMoving", true);
+            isHurt = true;
+            Debug.Log("🔥 Quái bị tấn công!");
+            StartCoroutine(HurtRecovery());
+        }
+
+        if (currentHp <= 0)
+        {
+            Die();
+        }
+    }
+
+    // Coroutine để hiển thị animation bị thương và tạm dừng hành động
+    private IEnumerator HurtRecovery()
+    {
+        yield return new WaitForSeconds(0.5f); // Thời gian chờ khi bị tấn công
+        isHurt = false; // Quái có thể di chuyển lại
+    }
+
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    private void UpdateHpBar()
+    {
+        if (hpBar != null)
+        {
+            hpBar.fillAmount = currentHp / maxHp;
         }
     }
 }
