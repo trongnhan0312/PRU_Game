@@ -163,6 +163,14 @@ public class PlayerController : MonoBehaviour
                     GameObject bloodEffect = Instantiate(blood, enemy.transform.position, quaternion.identity);
                     Destroy(bloodEffect, 1f);
                 }
+
+                Boss boss = enemy.GetComponent<Boss>();
+                if (boss != null)
+                {
+                    boss.TakeDamage(10f); // Gây 10 sát thương
+                    GameObject bloodEffect = Instantiate(blood, boss.transform.position, quaternion.identity);
+                    Destroy(bloodEffect, 1f);
+                }
             }
         }
     }
