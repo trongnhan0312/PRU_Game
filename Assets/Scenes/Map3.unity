@@ -94002,7 +94002,7 @@ Transform:
   m_GameObject: {fileID: 1756347293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4103336, y: -3.5172398, z: -10}
+  m_LocalPosition: {x: -2.4132547, y: -3.5172398, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94435,7 +94435,7 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].voiceClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2b3db90f70dbffd42be5c977c2789c38, type: 3}
+      objectReference: {fileID: 8300000, guid: 4853dac4dc2b61244a06325a01f01261, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[1].voiceClip
       value: 
