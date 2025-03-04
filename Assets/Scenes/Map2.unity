@@ -1703,6 +1703,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3120973918540334830, guid: 4890f7ce94355ab40ab9f6f2280aa3c0, type: 3}
   m_PrefabInstance: {fileID: 411197344}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &571325853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5294879025121634556, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
+  m_PrefabInstance: {fileID: 1562821446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &584569668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2832712335965695739, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
+  m_PrefabInstance: {fileID: 1562821446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &626422065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9622,6 +9638,163 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: nextLv
+      value: 
+      objectReference: {fileID: 1836504817}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: nameNpc
+      value: 
+      objectReference: {fileID: 1961163296}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: imageNpc
+      value: 
+      objectReference: {fileID: 1366832551}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 571325853}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1907423499}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogPanel
+      value: 
+      objectReference: {fileID: 584569668}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e68b41916215214e943c29c565a260d, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 87f47b0e73ed89544b2078627bb7f5ba, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c1175379a211e0f41badaac1802c1d64, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 32268ba938bb4884eae1d5cf4d4a87c6, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b3db90f70dbffd42be5c977c2789c38, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].voiceClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cf3b0e7b28694244b8efd1604b9402e, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].dialogText
+      value: "Nova, anh \u0111\xE3 v\u01B0\u1EE3t qua Iron Tyrant, nh\u01B0ng \u0111\xE2y
+        m\u1EDBi l\xE0 th\u1EED th\xE1ch th\u1EF1c s\u1EF1. Sai l\u1EA7m \u0111\u1ED3ng
+        ngh\u0129a v\u1EDBi c\xE1i ch\u1EBFt."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].dialogText
+      value: "V\u1EADy l\u1EA7n n\xE0y k\u1EBB th\xF9 l\xE0 ai?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].dialogText
+      value: "Bone Devil, m\u1ED9t sinh v\u1EADt t\xE1i sinh t\u1EEB chi\u1EBFn tranh,
+        c\xF3 th\u1EC3 h\u1EA5p th\u1EE5 linh h\u1ED3n \u0111\u1EC3 h\u1ED3i ph\u1EE5c"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].dialogText
+      value: "T\xF4i s\u1EBD h\u1EA1 g\u1EE5c n\xF3 v\xE0 l\u1EA5y vi\xEAn Eden Relic
+        th\u1EE9 hai."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].dialogText
+      value: "\u0110\u1EEBng \u0111\u1EC3 n\xF3 c\xF3 c\u01A1 h\u1ED9i h\u1ED3i ph\u1EE5c.
+        Ch\xFAc may m\u1EAFn."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].dialogText
+      value: "T\xF4i s\u1EBD kh\xF4ng l\xE0m anh th\u1EA5t v\u1ECDng."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[6].dialogText
+      value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[7].dialogText
+      value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].dialogText
+      value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[6].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[7].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[6].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[7].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
     - target: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_Name
       value: NPC(Dr.Ezreal)
@@ -9673,7 +9846,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1907423499}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
 --- !u!1001 &908005902
 PrefabInstance:
@@ -14688,6 +14864,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+--- !u!114 &1366832551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3571638021626066928, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
+  m_PrefabInstance: {fileID: 1562821446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1448100051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16137,6 +16324,119 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+--- !u!1 &1907423498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+  m_PrefabInstance: {fileID: 901974042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1907423499
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907423498}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1961163296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3678820619036364215, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
+  m_PrefabInstance: {fileID: 1562821446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4841852250344310023
 PrefabInstance:
   m_ObjectHideFlags: 0
