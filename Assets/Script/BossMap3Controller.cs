@@ -11,6 +11,9 @@ public class BossMap3Controller : Enemy
     [SerializeField] private GameObject effectObject;
     [SerializeField] private GameObject nextText;
     [SerializeField] private GameObject nextCheckpoint;
+    [SerializeField] private GameObject gemObject; // Viên ngọc
+    [SerializeField] private NPCDialog npcDialog;
+
 
     public bool IsKilledBoss { get; private set; } = false;
 
@@ -19,6 +22,42 @@ public class BossMap3Controller : Enemy
     public float attack2Damage = 35f; // Sát thương của chiêu 2
 
     private string currentAttack = ""; // Biến lưu chiêu đang dùng
+
+
+    public void KillBoss()
+    {
+        if (!IsKilledBoss)
+        {
+            IsKilledBoss = true;
+
+            // Chơi hiệu ứng biến mất
+          
+
+            // Để lại viên ngọc cho người chơi
+            if (gemObject != null)
+            {
+                Instantiate(gemObject, transform.position, Quaternion.identity);
+            }
+
+            // Kích hoạt NPC dialog
+            if (npcDialog != null)
+            {
+                npcDialog.gameObject.SetActive(true); // Kích hoạt NPC
+                npcDialog.IsBossKilled = true; // Đánh dấu boss đã chết
+            }
+
+            // Tắt boss
+            gameObject.SetActive(false);
+
+        
+        }
+    }
+    protected override void Die()
+    {
+        base.Die(); // Gọi phương thức Die() của lớp cha nếu cần
+
+        KillBoss();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,6 +86,8 @@ public class BossMap3Controller : Enemy
                 Debug.Log($"🔴 Boss dùng {currentAttack}, gây {GetAttackDamage()} sát thương.");
             }
         }
+      
+
     }
 
     public float damageInterval = 0.3f;

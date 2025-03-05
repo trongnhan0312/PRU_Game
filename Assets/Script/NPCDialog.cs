@@ -27,12 +27,24 @@ public class NPCDialog : MonoBehaviour
     private bool isTyping;
     private GameObject[] enemies;
     public GameObject nextLv;
+    public bool IsBossKilled { get; set; }
+    [SerializeField] private NPCDialog npcAfterBossPrefab;
+    [SerializeField]  public GameObject newTowerPrefab;
+    [SerializeField] public GameObject creditPrefab;
+
 
     void Start()
     {
         dialogPanel.SetActive(false);
         dialogIndex = 0;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+
+        if (IsBossKilled)
+        {
+            gameObject.SetActive(true);
+        }
+
 
         foreach (GameObject enemy in enemies)
         {
@@ -66,8 +78,18 @@ public class NPCDialog : MonoBehaviour
         {
             readyToSpeak = true;
         }
+        if (collision.CompareTag("Player") && IsBossKilled)
+        {
+            readyToSpeak = true;
+        }
     }
-
+    public void ShowCredit()
+    {
+        if (creditPrefab != null)
+        {
+            creditPrefab.SetActive(true); // Kích hoạt credit
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -105,6 +127,23 @@ public class NPCDialog : MonoBehaviour
         dialogPanel.SetActive(false);
         dialogIndex = 0;
         gameObject.SetActive(false);
+
+
+        if (npcAfterBossPrefab != null)
+        {
+            //NPCDialog newNpc = Instantiate(npcAfterBossPrefab, new Vector3(5, 0, 0), Quaternion.identity); // Vị trí của NPC mới
+            npcAfterBossPrefab.gameObject.SetActive(true); // Kích hoạt NPC mới
+            npcAfterBossPrefab.IsBossKilled = false; // Đánh dấu NPC mới
+        }
+        if (newTowerPrefab != null)
+        {
+            // Thay thế tower cũ bằng tower mới
+            newTowerPrefab.SetActive(true);
+        }
+        if(creditPrefab != null)
+        {
+            ShowCredit();
+        }
 
         foreach (GameObject enemy in enemies)
         {
