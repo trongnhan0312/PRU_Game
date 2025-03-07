@@ -14,28 +14,25 @@ public class GameManager : MonoBehaviour
     public GameObject InfoButton;
     public GameObject guidePanel;
 
+    [SerializeField] private GameObject buttonMap2; // Kéo button vào Inspector
+    [SerializeField] private GameObject buttonMap3;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        buttonMap2.SetActive(false); // Ẩn button khi bắt đầu game
+        buttonMap3.SetActive(false);
         UpdateScore();
         MainMenu();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() { }
+
     public void ToggleGuidePanel()
     {
         bool isActive = !guidePanel.activeSelf;
         guidePanel.SetActive(isActive);
-        //foreach (GameObject obj in objectsToDisable)
-        //{
-        //    obj.SetActive(!isActive);
-        //}
     }
+
     public void AddScore(int point)
     {
         score += point;
@@ -44,8 +41,9 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        scoreText.text=score.ToString();
+        scoreText.text = score.ToString();
     }
+
     public void MainMenu()
     {
         mainMenu.SetActive(true);
@@ -53,15 +51,16 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 0;
     }
+
     public void mapSelection()
     {
-
-       MapSelection.SetActive(true);
+        MapSelection.SetActive(true);
         mainMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 0f;
     }
+
     public void GameOverMenu()
     {
         gameOverMenu.SetActive(true);
@@ -69,21 +68,24 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         Time.timeScale = 0f;
     }
+
     public void PauseMenu()
     {
         pauseMenu.SetActive(true);
         gameOverMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
+        mainMenu.SetActive(false);
         Time.timeScale = 0f;
     }
+
     public void StartGame()
     {
         mainMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
-        MapSelection.SetActive(false); 
+        MapSelection.SetActive(false);
         Time.timeScale = 1f;
     }
+
     public void Map()
     {
         mainMenu.SetActive(false);
@@ -93,7 +95,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-
     public void ResumeGame()
     {
         mainMenu.SetActive(false);
@@ -101,5 +102,5 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
-}
 
+}
