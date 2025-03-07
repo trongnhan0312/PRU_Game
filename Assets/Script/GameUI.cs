@@ -9,9 +9,7 @@ public class GameUI : MonoBehaviour
     public void StartGame()
     {
         gameManager.StartGame(); // Khi bấm Play, mở MapSelection
-
     }
-
 
     public void LoadMap(string mapName)
     {
@@ -20,14 +18,29 @@ public class GameUI : MonoBehaviour
 
     private IEnumerator LoadMapAsync(string mapName)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(mapName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(mapName, LoadSceneMode.Single); // Load map mới, đóng scene cũ
 
-        while (!asyncLoad.isDone)
+        asyncLoad.allowSceneActivation = false; // Ngăn scene tự động kích hoạt khi chưa load xong
+
+        while (asyncLoad.progress < 0.9f) // Load đến 90% trước
         {
-            yield return null; // Chờ cho đến khi Scene load xong
+            yield return null;
         }
 
-        gameManager.StartGame(); // Chỉ chạy khi Scene mới đã hoàn toàn tải xong
+        asyncLoad.allowSceneActivation = true; // Sau khi load xong mới kích hoạt scene mới
+
+        gameManager.StartGame(); // Khi scene hoàn toàn tải xong, bắt đầu game
+    }
+
+
+    public void LoadMap2()
+    {
+        LoadMap("Map2"); // Load map 2
+    }
+
+    public void LoadMap3()
+    {
+        LoadMap("Map3"); // Load map 3
     }
 
     public void QuitGame()
@@ -35,17 +48,18 @@ public class GameUI : MonoBehaviour
         Application.Quit();
     }
 
-    public void continueGame()
+    public void ContinueGame()
     {
         gameManager.ResumeGame();
     }
 
-    public void mainMenu()
+    public void MainMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void map()
+
+    public void MapSelection()
     {
-       gameManager.Map();
+        gameManager.Map();
     }
 }
