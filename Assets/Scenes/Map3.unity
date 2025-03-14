@@ -54885,12 +54885,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
       propertyPath: maxHp
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
       propertyPath: manaObject
       value: 
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
+    - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
+      propertyPath: stayDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
       propertyPath: enterDamage
       value: 10
@@ -55134,7 +55138,7 @@ MonoBehaviour:
   maxHp: 200
   hpBar: {fileID: 844876260}
   enterDamage: 10
-  stayDamage: 0
+  stayDamage: 2
   isBoss: 0
   animator: {fileID: 1316686218}
   attackCooldown: 1
@@ -55171,7 +55175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3313289497574229472, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: m_Name
@@ -55445,7 +55453,7 @@ MonoBehaviour:
   maxHp: 300
   hpBar: {fileID: 232394754}
   enterDamage: 10
-  stayDamage: 0
+  stayDamage: 2
   isBoss: 1
   animator: {fileID: 1386468062}
   attackCooldown: 1
@@ -117628,15 +117636,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.35654
+      value: 0.45881826
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.35654
+      value: 0.45881826
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.35654
+      value: 0.45881826
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117668,11 +117676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 128.87
+      value: 165.812
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 72.588
+      value: 93.418
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -117778,6 +117786,10 @@ PrefabInstance:
       propertyPath: manaObject
       value: 
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
+    - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
+      propertyPath: stayDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
       propertyPath: enterDamage
       value: 10
@@ -118078,7 +118090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: enterDamage
@@ -118740,7 +118752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: patrolDistance
@@ -119003,15 +119015,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.31432235
+      value: 0.34987223
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.31432235
+      value: 0.34987223
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.31432235
+      value: 0.34987223
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -119043,11 +119055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 111.96
+      value: 124.621
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 64.026
+      value: 71.256
       objectReference: {fileID: 0}
     - target: {fileID: 8679760189213738002, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -119293,6 +119305,10 @@ PrefabInstance:
       propertyPath: manaObject
       value: 
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
+    - target: {fileID: 4414094508891458227, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
+      propertyPath: stayDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7350125972215428469, guid: dda9b6ec4246801499d0a3b40f559243, type: 3}
       propertyPath: m_Name
       value: EnemyMap3 (HP)

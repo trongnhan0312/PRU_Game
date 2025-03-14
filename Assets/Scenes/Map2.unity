@@ -249,7 +249,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 5
+  field of view: 34
   orthographic: 1
   orthographic size: 5
   m_Depth: -1
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 58823560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.15, y: -1.51, z: -10}
+  m_LocalPosition: {x: -2.4155455, y: -3.5172498, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,11 +372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3313289497574229472, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: m_Name
@@ -869,7 +873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6402956101370388399, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -938,11 +942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: patrolDistance
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6402956101370388399, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: m_LocalScale.x
@@ -1015,7 +1019,11 @@ PrefabInstance:
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
@@ -2101,7 +2109,11 @@ PrefabInstance:
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
@@ -9861,7 +9873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
+      propertyPath: enterDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: patrolDistance
@@ -10159,7 +10175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
@@ -15103,7 +15123,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
@@ -15669,11 +15693,15 @@ PrefabInstance:
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3313289497574229472, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: m_Name
@@ -16033,6 +16061,26 @@ PrefabInstance:
       propertyPath: patrolDistance
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8456381331284478580, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5515
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456381331284478580, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5515
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456381331284478580, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5515
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456381331284478580, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 560.8494
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456381331284478580, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 315.30173
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16056,7 +16104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: patrolDistance
@@ -16138,7 +16186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: patrolDistance
@@ -16359,7 +16407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
@@ -16440,7 +16492,11 @@ PrefabInstance:
       objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
@@ -16691,7 +16747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
+      propertyPath: enterDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2280374551144636209, guid: 3ddc2a22321421647ae21b7353f27867, type: 3}
       propertyPath: patrolDistance
