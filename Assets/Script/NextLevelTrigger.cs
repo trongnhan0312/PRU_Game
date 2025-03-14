@@ -5,6 +5,7 @@ public class NextLevelTrigger : MonoBehaviour
 {
     private bool isTriggered = false; // Để tránh load nhiều lần
     private GameManager gameManager;
+    public GameObject CircleSpace;
 
     void Start()
     {
@@ -26,10 +27,12 @@ public class NextLevelTrigger : MonoBehaviour
             if (boss.isBoss && !boss.IsKilledBoss) // Nếu có boss chưa chết thì không thể qua màn
             {
                 Debug.Log("🚫 Boss chưa chết, không thể qua màn!");
+                CircleSpace.SetActive(false);
                 return false;
             }
         }
         Debug.Log("✅ Tất cả boss đã bị tiêu diệt, mở cổng qua màn!");
+        CircleSpace.SetActive(true);
         return true; // Nếu tất cả boss đã chết, cho phép qua màn
     }
 

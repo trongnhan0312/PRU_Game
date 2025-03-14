@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class NextLevelTriggerMap2 : MonoBehaviour
 {
     private bool isTriggered = false; // Để tránh load nhiều lần
-
+    public GameObject CircleSpace;
     void Update()
     {
         // 🔥 Nếu boss chưa chết -> Chặn player đi qua
@@ -20,10 +20,12 @@ public class NextLevelTriggerMap2 : MonoBehaviour
             if (boss.isBoss && !boss.IsKilledBoss) // Nếu có boss chưa chết thì không thể qua màn
             {
                 Debug.Log("🚫 Boss chưa chết, không thể qua màn!");
+                CircleSpace.SetActive(false);
                 return false;
             }
         }
         Debug.Log("✅ Tất cả boss đã bị tiêu diệt, mở cổng qua màn!");
+        CircleSpace.SetActive(true);
         return true; // Nếu tất cả boss đã chết, cho phép qua màn
     }
 
