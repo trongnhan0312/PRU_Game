@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image hpBar;
 
     [SerializeField] private GameManager gameManager;
+    public  bool isInDialog = false; // Thêm biến này để theo dõi trạng thái hội thoại
 
     private void Awake()
     {
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
+        if (isInDialog) return;
         float moveInput = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
         if (moveInput > 0) transform.localScale = new Vector3(1, 1, 1);

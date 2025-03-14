@@ -32,9 +32,12 @@ public class NPCDialog : MonoBehaviour
     [SerializeField]  public GameObject newTowerPrefab;
     [SerializeField] public GameObject creditPrefab;
 
+    private PlayerController playerController;
 
     void Start()
     {
+        Debug.Log("Day ne: 1111111111");
+
         dialogPanel.SetActive(false);
         dialogIndex = 0;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -51,6 +54,8 @@ public class NPCDialog : MonoBehaviour
             enemy.SetActive(false);
             nextLv.SetActive(false);
         }
+        playerController = FindObjectOfType<PlayerController>();
+        Debug.Log("Day ne: " + playerController.name);
     }
 
     void Update()
@@ -104,8 +109,19 @@ public class NPCDialog : MonoBehaviour
 
     private void StartConversation()
     {
+        Debug.Log("Check");
+
+        if (playerController != null)
+        {
+            Debug.Log("Vo");
+
+            playerController.isInDialog = true;  // Bắt đầu hội thoại
+        }
+        Debug.Log("END");
+
         dialogPanel.SetActive(true);
         dialogIndex = 0;
+
         StartCoroutine(ShowDialog());
     }
 
@@ -124,6 +140,10 @@ public class NPCDialog : MonoBehaviour
 
     private void EndConversation()
     {
+        if (playerController != null)
+        {
+            playerController.isInDialog = false;  // Kết thúc hội thoại
+        }
         dialogPanel.SetActive(false);
         dialogIndex = 0;
         gameObject.SetActive(false);
@@ -150,6 +170,7 @@ public class NPCDialog : MonoBehaviour
             enemy.SetActive(true);
             nextLv.SetActive(true);
         }
+
     }
 
     private IEnumerator ShowDialog()
