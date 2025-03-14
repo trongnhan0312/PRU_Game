@@ -36,6 +36,8 @@ public class NPCDialog : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Day ne: 1111111111");
+
         dialogPanel.SetActive(false);
         dialogIndex = 0;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -53,6 +55,7 @@ public class NPCDialog : MonoBehaviour
             nextLv.SetActive(false);
         }
         playerController = FindObjectOfType<PlayerController>();
+        Debug.Log("Day ne: " + playerController.name);
     }
 
     void Update()
@@ -106,10 +109,15 @@ public class NPCDialog : MonoBehaviour
 
     private void StartConversation()
     {
+        Debug.Log("Check");
+
         if (playerController != null)
         {
+            Debug.Log("Vo");
+
             playerController.isInDialog = true;  // Bắt đầu hội thoại
         }
+        Debug.Log("END");
 
         dialogPanel.SetActive(true);
         dialogIndex = 0;
