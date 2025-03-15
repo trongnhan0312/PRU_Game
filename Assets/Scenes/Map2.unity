@@ -249,7 +249,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34
+  field of view: 5
   orthographic: 1
   orthographic size: 5
   m_Depth: -1
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 58823560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4155455, y: -3.5172498, z: -10}
+  m_LocalPosition: {x: -13.15, y: -1.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10012,8 +10012,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].dialogText
-      value: "Bone Devil, m\u1ED9t sinh v\u1EADt t\xE1i sinh t\u1EEB chi\u1EBFn tranh,
-        c\xF3 th\u1EC3 h\u1EA5p th\u1EE5 linh h\u1ED3n \u0111\u1EC3 h\u1ED3i ph\u1EE5c"
+      value: "Samurai Devil ,m\u1ED9t samurai tr\u1ED5i d\u1EADy t\u1EEB th\u1EDDi
+        c\u1ED5 \u0111\u1EA1i, c\xF3 thanh ki\u1EBFm c\u1EE7a qu\u1EF7"
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].dialogText
@@ -10022,8 +10022,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[4].dialogText
-      value: "\u0110\u1EEBng \u0111\u1EC3 n\xF3 c\xF3 c\u01A1 h\u1ED9i h\u1ED3i ph\u1EE5c.
-        Ch\xFAc may m\u1EAFn."
+      value: "\u0110\u1EEBng \u0111\u1EC3 n\xF3 c\xF3 c\u01A1 h\u1ED9i \u0111\xE1nh
+        b\u1EA1i c\u1EADu. Ch\xFAc may m\u1EAFn."
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[5].dialogText

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5246597557222010787}
   - component: {fileID: 4659571320358665251}
   - component: {fileID: 2210206556098237478}
+  - component: {fileID: 3535247086352069737}
   m_Layer: 0
   m_Name: NPC(Dr.Ezreal)
   m_TagString: NPC
@@ -29,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4223529138487944563}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9999977, z: -0, w: 0.0021849799}
+  m_LocalRotation: {x: 0, y: 0.9999977, z: 0, w: 0.0021817826}
   m_LocalPosition: {x: -0.26, y: 0.12, z: -0.01}
-  m_LocalScale: {x: 2.01, y: 2.01, z: 2.01}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 824001451
   m_SortingLayer: 14
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 48bc5f6c3766c7244b8a2090b367d98c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,68 +210,122 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogEntries:
+  - speakerName: Mysterious Character
+    speakerSprite: {fileID: 21300000, guid: 1d5c2b524d7734240a82bc6b06f841c8, type: 3}
+    dialogText: "Ng\u01B0\u01A1i ngh\u0129 tr\u1EADn chi\u1EBFn \u0111\xE3 k\u1EBFt
+      th\xFAc sao?"
+    voiceClip: {fileID: 8300000, guid: 006ad47b1adc7704fb624892eb3b6f14, type: 3}
   - speakerName: Nova
     speakerSprite: {fileID: 21300000, guid: cee0f3d723836fb45aff84dd2bc4b349, type: 3}
-    dialogText: " Dr. Ezreal! Chuy\u1EC7n g\xEC \u0111ang x\u1EA3y ra v\u1EADy? C\u0103n
-      c\u1EE9 tr\xF4ng th\u1EADt h\u1ED7n lo\u1EA1n!"
-    voiceClip: {fileID: 0}
-  - speakerName: Dr.Ezreal
-    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
-    dialogText: "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i. Th\u1EBF gi\u1EDBi
-      \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5..."
-    voiceClip: {fileID: 0}
-  - speakerName: Dr.Ezreal
-    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
-    dialogText: "Oblivion \u0111\xE3 chi\u1EBFm gi\u1EEF b\u1ED1n vi\xEAn ng\u1ECDc
-      nguy\xEAn t\u1ED1: L\u1EEDa, N\u01B0\u1EDBc, \u0110\u1EA5t, v\xE0 Gi\xF3. Ch\xFAng
-      \u0111ang thao t\xFAng s\u1EE9c m\u1EA1nh c\u1EE7a thi\xEAn nhi\xEAn theo \xFD
-      mu\u1ED1n c\u1EE7a m\xECnh"
-    voiceClip: {fileID: 0}
-  - speakerName: Dr.Ezreal
-    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
-    dialogText: "C\xE1c th\xE0nh ph\u1ED1 l\u1EDBn \u0111\xE3 b\u1ECB nh\u1EA5n ch\xECm
-      trong bi\u1EC3n l\u1EEDa v\xE0 b\xE3o t\u1ED1. Nh\u1EEFng khu r\u1EEBng xanh
-      gi\u1EDD \u0111\xE2y ch\u1EC9 c\xF2n l\xE0 \u0111\u1ED1ng tro t\xE0n. Tr\xE1i
-      \u0111\u1EA5t \u0111ang d\u1EA7n m\u1EA5t \u0111i s\u1EF1 s\u1ED1ng."
-    voiceClip: {fileID: 0}
-  - speakerName: Dr.Ezreal
-    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
-    dialogText: "N\u1EBFu ch\xFAng ta kh\xF4ng h\xE0nh \u0111\u1ED9ng ngay b\xE2y
-      gi\u1EDD, ch\u1EC9 trong v\xE0i ng\xE0y n\u1EEFa, Oblivion s\u1EBD ho\xE0n
-      to\xE0n ki\u1EC3m so\xE1t th\u1EBF gi\u1EDBi n\xE0y. L\xFAc \u0111\xF3, lo\xE0i
-      ng\u01B0\u1EDDi s\u1EBD kh\xF4ng c\xF2n c\u01A1 h\u1ED9i n\xE0o \u0111\u1EC3
-      t\u1ED3n t\u1EA1i."
-    voiceClip: {fileID: 0}
-  - speakerName: Nova
-    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
-    dialogText: " Kh\xF4ng th\u1EC3 n\xE0o... Ch\xFAng ta c\xF3 c\xE1ch n\xE0o \u0111\u1EC3
-      ng\u0103n ch\u1EB7n ch\xFAng kh\xF4ng?"
-    voiceClip: {fileID: 0}
-  - speakerName: Nova
-    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
-    dialogText: "C\xF3 m\u1ED9t hy v\u1ECDng duy nh\u1EA5t. Eden Relics \u2013 nh\u1EEFng
-      c\u1ED5 v\u1EADt ch\u1EE9a \u0111\u1EF1ng s\u1EE9c m\u1EA1nh c\u1ED5 \u0111\u1EA1i,
-      th\u1EE9 duy nh\u1EA5t c\xF3 th\u1EC3 \u0111\u1ED1i ch\u1ECDi v\u1EDBi s\u1EE9c
-      m\u1EA1nh c\u1EE7a Oblivion."
-    voiceClip: {fileID: 0}
-  - speakerName: Nova
-    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
-    dialogText: "Eden Relics? T\xF4i ch\u01B0a t\u1EEBng nghe v\u1EC1 ch\xFAng..."
-    voiceClip: {fileID: 0}
-  - speakerName: Dr.Ezreal
-    speakerSprite: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
-    dialogText: "Ch\xFAng \u0111\xE3 b\u1ECB th\u1EA5t l\u1EA1c t\u1EEB h\xE0ng ngh\xECn
-      n\u0103m tr\u01B0\u1EDBc. Nh\u01B0ng theo nh\u1EEFng t\xE0i li\u1EC7u c\u1ED5
-      m\xE0 t\xF4i t\xECm \u0111\u01B0\u1EE3c, vi\xEAn \u0111\u1EA7u ti\xEAn n\u1EB1m
-      s\xE2u trong t\xE0n t\xEDch c\u1EE7a Doomed Horizon."
-    voiceClip: {fileID: 0}
-  - speakerName: Nova
-    speakerSprite: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
-    dialogText: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
-    voiceClip: {fileID: 0}
+    dialogText: "\"Ng\u01B0\u01A1i l\xE0 ai?"
+    voiceClip: {fileID: 8300000, guid: 5aefa73dbbeee5142b4b5e666d4b2cb7, type: 3}
+  - speakerName: Mysterious Character
+    speakerSprite: {fileID: 21300000, guid: 1d5c2b524d7734240a82bc6b06f841c8, type: 3}
+    dialogText: "C\u1EE9 ch\u1EDD m\xE0 xem\u2026"
+    voiceClip: {fileID: 8300000, guid: a05e32ef8401e8a4986a042db745a84a, type: 3}
   dialogPanel: {fileID: 0}
   dialogText: {fileID: 0}
   nameNpc: {fileID: 0}
   imageNpc: {fileID: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 3535247086352069737}
   nextLv: {fileID: 0}
+  npcAfterBossPrefab: {fileID: 0}
+  newTowerPrefab: {fileID: 0}
+  creditPrefab: {fileID: 0}
+--- !u!82 &3535247086352069737
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223529138487944563}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

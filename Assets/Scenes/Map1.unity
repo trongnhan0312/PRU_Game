@@ -17624,6 +17624,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a9730e73b2f57544ba91c082fe4329e1, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].dialogText
+      value: "Ch\xFAng \u0111ang b\u1ECB qu\xE1i v\u1EADt n\u1EAFm gi\u1EEF. Nh\u01B0ng
+        theo nh\u1EEFng t\xE0i li\u1EC7u c\u1ED5 m\xE0 t\xF4i t\xECm \u0111\u01B0\u1EE3c,
+        vi\xEAn \u0111\u1EA7u ti\xEAn do qu\xE1i v\u1EADt Slime chi\u1EBFm gi\u1EEF
+        ."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[6].speakerName
       value: Dr.Ezreal
       objectReference: {fileID: 0}
