@@ -2417,6 +2417,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2033366719}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: creditPrefab
+      value: 
+      objectReference: {fileID: 570284699}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: newTowerPrefab
       value: 
       objectReference: {fileID: 0}
@@ -54257,7 +54261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &570284700
 MonoBehaviour:
   m_ObjectHideFlags: 0
