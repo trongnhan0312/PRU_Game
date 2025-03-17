@@ -7,6 +7,7 @@ public class TowerInteraction : MonoBehaviour
     private bool isPlayerInRange = false; // Kiểm tra xem player có ở trong phạm vi không
     private GameObject currentTower; // Tham chiếu đến tower hiện tại
     public NPCDialog npcPrefab;
+
     void Start()
     {
         currentTower = this.gameObject; // Gán tower ban đầu
@@ -48,18 +49,29 @@ public class TowerInteraction : MonoBehaviour
         if (newTowerPrefab != null && currentTower != null)
         {
             Debug.Log("Đang thay đổi tower..."); // Thêm log để kiểm tra
+
             // Tắt tower hiện tại
             currentTower.SetActive(false);
             newTowerPrefab.SetActive(true);
-            // Tạo tower mới tại vị trí hiện tại của tower cũ
-            //currentTower = Instantiate(newTowerPrefab, transform.position, transform.rotation);
-            //currentTower.SetActive(true); // Kích hoạt tower mới
+
+            // Xóa newTowerPrefab sau 3 giây
+            Invoke(nameof(DestroyNewTower), 3f);
+
             if (npcPrefab != null)
             {
                 Debug.Log("Hiển thị NPC END"); // Thêm log để kiểm tra
-
                 npcPrefab.gameObject.SetActive(true); // Kích hoạt NPC để bắt đầu hội thoại
             }
+        }
+    }
+
+    // Hàm xóa newTowerPrefab sau 3 giây
+    private void DestroyNewTower()
+    {
+        if (newTowerPrefab != null)
+        {
+            Destroy(newTowerPrefab);
+            Debug.Log("newTowerPrefab đã bị xóa sau 3s!");
         }
     }
 }
