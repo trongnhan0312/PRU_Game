@@ -14813,7 +14813,7 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].voiceClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2e68b41916215214e943c29c565a260d, type: 3}
+      objectReference: {fileID: 8300000, guid: 0aea8956595d6584aa52634d814fb0c6, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[1].voiceClip
       value: 
@@ -14821,7 +14821,7 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].voiceClip
       value: 
-      objectReference: {fileID: 8300000, guid: c1175379a211e0f41badaac1802c1d64, type: 3}
+      objectReference: {fileID: 8300000, guid: ca002d574e5c3e64eb7d0c69487147dd, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].voiceClip
       value: 
@@ -14829,14 +14829,14 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[4].voiceClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2b3db90f70dbffd42be5c977c2789c38, type: 3}
+      objectReference: {fileID: 8300000, guid: 7cf3df7e8939ec54a9a4ba10dcd51db0, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[5].voiceClip
       value: 
       objectReference: {fileID: 8300000, guid: 0cf3b0e7b28694244b8efd1604b9402e, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].dialogText
-      value: "Nova, anh \u0111\xE3 v\u01B0\u1EE3t qua Iron Tyrant, nh\u01B0ng \u0111\xE2y
+      value: "Nova, anh \u0111\xE3 v\u01B0\u1EE3t qua Slime, nh\u01B0ng \u0111\xE2y
         m\u1EDBi l\xE0 th\u1EED th\xE1ch th\u1EF1c s\u1EF1. Sai l\u1EA7m \u0111\u1ED3ng
         ngh\u0129a v\u1EDBi c\xE1i ch\u1EBFt."
       objectReference: {fileID: 0}
@@ -14857,7 +14857,7 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[4].dialogText
       value: "\u0110\u1EEBng \u0111\u1EC3 n\xF3 c\xF3 c\u01A1 h\u1ED9i \u0111\xE1nh
-        b\u1EA1i c\u1EADu. Ch\xFAc may m\u1EAFn."
+        b\u1EA1i c\u1EADu. Ch\xFAc may m\u1EAFn.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[5].dialogText
@@ -14882,6 +14882,10 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[1].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].speakerName
+      value: Dr. Ezreal
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].speakerName
@@ -14915,6 +14919,10 @@ PrefabInstance:
       propertyPath: dialogEntries.Array.data[1].speakerSprite
       value: 
       objectReference: {fileID: 21300000, guid: dea3765aa08cf7449918a03f8d173e57, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].speakerSprite
       value: 
