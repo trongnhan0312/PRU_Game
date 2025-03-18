@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.CompareTag("KC"))
         {
             Destroy(collision.gameObject);
-            gameManager.AddScore(1);
+            //gameManager.AddScore(1);
         }
 
     }
