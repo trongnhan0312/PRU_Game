@@ -66,6 +66,8 @@
             mainMenu?.SetActive(true);
             gameOverMenu?.SetActive(false);
             pauseMenu?.SetActive(false);
+        MapSelection.SetActive(false);
+
             Time.timeScale = 0;
         }
 
