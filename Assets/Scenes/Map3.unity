@@ -2101,7 +2101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -13.5}
+  m_AnchoredPosition: {x: 20, y: -15.53}
   m_SizeDelta: {x: 544, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130127297
@@ -2116,9 +2116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6817267337bff94aa632ffb5526f94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 50
-  startPositionY: -500
-  endPositionY: 1000
+  scrollSpeed: 100
+  startPositionY: -16
+  endPositionY: 4000
 --- !u!114 &130127298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,15 +2139,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTHE
-    END\n\n\n\n\n\n\nC\u1EA3m \u01A1n b\u1EA1n \u0111\xE3 ch\u01A1i !\nSteel Warrior
-    Adventure!\r\n\r\r\n\n\nCREDIT\n\n\n\rC\xE1c th\xE0nh vi\xEAn th\u1EF1c hi\u1EC7n\n\nV\xF5
-    Tr\u1ECDng Nh\xE2n\nL\xE2m Thanh Qu\u1ED1c Th\u1EAFng\nL\xE2m Quang H\u01B0ng\r\n\rNguy\u1EC5n
-    Thanh T\xF9ng\nTr\u1EA7n Ho\xE0ng Hu\xE2n\n\n\u0110\u1EB7c bi\u1EC7t c\u1EA3m
-    \u01A1n c\xE1c \u0111\u1ED1i t\xE1c \u0111\xE3 cung c\u1EA5p t\xE0i nguy\xEAn
-    v\xE0 h\u1ED7 tr\u1EE3 k\u1EF9 thu\u1EADt.\r\n\rUnity Asset Store\n\n\n\n\nSteel
-    Warrior Adventure\nM\u1ED9t game h\xE0nh \u0111\u1ED9ng \u0111\u1EA7y k\u1ECBch
-    t\xEDnh v\xE0 phi\xEAu l\u01B0u!\r\n\r\r\n\r\n-----------------------------------------------------------\r\nS\u1EA3n
+  m_text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTHE END\n\n\n\nC\u1EA3m \u01A1n
+    b\u1EA1n \u0111\xE3 ch\u01A1i !\nSteel Warrior Adventure!\r\n\r\r\n\n\nCREDIT\n\n\n\rC\xE1c
+    th\xE0nh vi\xEAn th\u1EF1c hi\u1EC7n\n\nV\xF5 Tr\u1ECDng Nh\xE2n\nL\xE2m Thanh
+    Qu\u1ED1c Th\u1EAFng\nL\xE2m Quang H\u01B0ng\r\n\rNguy\u1EC5n Thanh T\xF9ng\nTr\u1EA7n
+    Ho\xE0ng Hu\xE2n\n\n\n\n\nSteel Warrior Adventure\nM\u1ED9t game h\xE0nh \u0111\u1ED9ng
+    \u0111\u1EA7y k\u1ECBch t\xEDnh v\xE0 phi\xEAu l\u01B0u!\r\n\r\r\n\r\n-----------------------------------------------------------\r\nS\u1EA3n
     xu\u1EA5t b\u1EDFi: Nh\xF3m Steel Warrior Adventure\r\nT\u1EA5t c\u1EA3 quy\u1EC1n
     s\u1EDF h\u1EEFu thu\u1ED9c v\u1EC1 Steel Warrior Adventure.\n\n\n\n\n\n\n\nTO
     BE CONTINUE\n\n\n\r\n"
@@ -2177,8 +2174,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2215,7 +2212,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -684.06995, y: 0, z: -651.4935, w: -3074.0754}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2626,7 +2623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6215909680237693351, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 188.53
+      value: 190.13
       objectReference: {fileID: 0}
     - target: {fileID: 6215909680237693351, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_LocalPosition.y
@@ -54261,7 +54258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &570284700
 MonoBehaviour:
   m_ObjectHideFlags: 0
