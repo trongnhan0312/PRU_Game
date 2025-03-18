@@ -10225,6 +10225,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1255039980}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].voiceClip
       value: 
       objectReference: {fileID: 8300000, guid: 9b98d209c9b8b634cac3a746d88bf40b, type: 3}
@@ -10235,7 +10239,7 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].voiceClip
       value: 
-      objectReference: {fileID: 8300000, guid: a10ef1da01e110a4a8b1d898b064a7ca, type: 3}
+      objectReference: {fileID: 8300000, guid: c7366e4fc51054049b26561df0c4bebc, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].voiceClip
       value: 
@@ -10259,15 +10263,148 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[8].voiceClip
       value: 
-      objectReference: {fileID: 8300000, guid: bcd069532f637944bbdf74df53d2dcf7, type: 3}
+      objectReference: {fileID: 8300000, guid: 92bb16dc1877e7e49b20aaa1f17244a1, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[9].voiceClip
       value: 
       objectReference: {fileID: 8300000, guid: a9730e73b2f57544ba91c082fe4329e1, type: 3}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].dialogText
+      value: "Dr Ezreal, chuy\u1EC7n g\xEC \u0111ang x\u1EA3y ra v\u1EADy. C\u0103n
+        c\u1EE9 tr\xF4ng th\u1EADt h\u1ED7n lo\u1EA1n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].dialogText
+      value: "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i. Th\u1EBF gi\u1EDBi
+        \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].dialogText
+      value: "Oblivion \u0111\xE3 chi\u1EBFm gi\u1EEF ba vi\xEAn ng\u1ECDc Eden Relics.
+        Ch\xFAng \u0111ang thao t\xFAng s\u1EE9c m\u1EA1nh c\u1EE7a thi\xEAn nhi\xEAn
+        theo \xFD mu\u1ED1n c\u1EE7a m\xECnh"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].dialogText
+      value: "C\xE1c th\xE0nh ph\u1ED1 l\u1EDBn \u0111\xE3 b\u1ECB nh\u1EA5n ch\xECm
+        trong bi\u1EC3n l\u1EEDa v\xE0 b\xE3o t\u1ED1. Nh\u1EEFng khu r\u1EEBng xanh
+        gi\u1EDD \u0111\xE2y ch\u1EC9 c\xF2n l\xE0 \u0111\u1ED1ng tro t\xE0n. Tr\xE1i
+        \u0110\xE1t \u0111ang d\u1EA7n m\u1EA5t \u0111i s\u1EF1 s\u1ED1ng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].dialogText
+      value: "N\u1EBFu ch\xFAng ta kh\xF4ng h\xE0nh \u0111\u1ED9ng ngay b\xE2y gi\u1EDD,
+        ch\u1EC9 trong v\xE0i ng\xE0y n\u1EEFa Oblivion s\u1EBD ho\xE0n to\xE0n ki\u1EC3m
+        so\xE1t th\u1EBF gi\u1EDBi n\xE0y. L\xFAc \u0111\xF3, lo\xE0i ng\u01B0\u1EDDi
+        kh\xF4ng c\xF2n c\u01A1 h\u1ED9i \u0111\u1EC3 t\u1ED3n t\u1EA1i"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].dialogText
+      value: "Kh\xF4ng th\u1EC3 n\xE0o, ch\xFAng ta c\xF3 c\xE1ch n\xE0o \u0111\u1EC3
+        ng\u0103n ch\u1EB7n ch\xFAng kh\xF4ng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[6].dialogText
+      value: "C\xF3 m\u1ED9t hy v\u1ECDng duy nh\u1EA5t. Eden Relics, Nh\u1EEFng
+        c\u1ED5 v\u1EADt  ch\u1EE9a \u0111\u1EF1ng s\u1EE9c m\u1EA1nh c\u1ED5 \u0111\u1EA1i.
+        Th\u1EE9 duy nh\u1EA5t c\xF3 th\u1EC3 \u0111\u1ED1i ch\u1ECDi v\u1EDBi s\u1EE9c
+        m\u1EA1nh Oblivion"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[7].dialogText
+      value: "Eden Relics! t\xF4i ch\u01B0a t\u1EEBng nghe v\u1EC1 ch\xFAng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].dialogText
+      value: "Ch\xFAng \u0111ang b\u1ECB qu\xE1i v\u1EADt n\u1EAFm gi\u1EEF. Nh\u01B0ng
+        theo nh\u1EEFng t\xE0i li\u1EC7u c\u1ED5 m\xE0 t\xF4i t\xECm \u0111\u01B0\u1EE3c,
+        vi\xEAn \u0111\u1EA7u ti\xEAn do qu\xE1i v\u1EADt Slime chi\u1EBFm gi\u1EEF
+        ."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[9].dialogText
+      value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[6].speakerName
       value: Dr.Ezreal
       objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[7].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].speakerName
+      value: Dr.Ezreal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[9].speakerName
+      value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cee0f3d723836fb45aff84dd2bc4b349, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cee0f3d723836fb45aff84dd2bc4b349, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[6].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[7].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cee0f3d723836fb45aff84dd2bc4b349, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[8].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c39bcb37c7743b4eb731f5b1e22251a, type: 3}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[9].speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cee0f3d723836fb45aff84dd2bc4b349, type: 3}
     - target: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_Name
       value: NPC(Dr.Ezreal)
