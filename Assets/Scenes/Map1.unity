@@ -22470,7 +22470,7 @@ PrefabInstance:
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[1].dialogText
       value: "Nova, anh \u0111\u1EBFn \u0111\xFAng l\xFAc r\u1ED3i. Th\u1EBF gi\u1EDBi
-        \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5"
+        \u0111ang tr\xEAn b\u1EDD v\u1EF1c s\u1EE5p \u0111\u1ED5 "
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].dialogText
