@@ -58,6 +58,7 @@ public class EnemyMap3 : Enemy
     {
         if (collision.CompareTag("Player"))
         {
+            isDamaging = false;
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {

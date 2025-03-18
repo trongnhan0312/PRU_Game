@@ -4,11 +4,16 @@ using System.Collections;
 
 public class GameUI : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    private GameManager gameManager;
+
+    void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     public void StartGame()
     {
-        gameManager.StartGame(); // Khi bấm Play, mở MapSelection
+        LoadMap1(); // Khi bấm Play, mở MapSelection
     }
 
     public void LoadMap(string mapName)
@@ -18,29 +23,39 @@ public class GameUI : MonoBehaviour
 
     private IEnumerator LoadMapAsync(string mapName)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(mapName, LoadSceneMode.Single); // Load map mới, đóng scene cũ
+        if (!SceneManager.GetSceneByName("GameUI").isLoaded)
+        {
+            SceneManager.LoadScene("GameUI", LoadSceneMode.Additive);
+            yield return new WaitForSeconds(0.5f); // Chờ load UI trước
+        }
 
-        asyncLoad.allowSceneActivation = false; // Ngăn scene tự động kích hoạt khi chưa load xong
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(mapName, LoadSceneMode.Single);
+        asyncLoad.allowSceneActivation = false;
 
-        while (asyncLoad.progress < 0.9f) // Load đến 90% trước
+        while (asyncLoad.progress < 0.9f)
         {
             yield return null;
         }
 
-        asyncLoad.allowSceneActivation = true; // Sau khi load xong mới kích hoạt scene mới
+        asyncLoad.allowSceneActivation = true;
 
-        gameManager.StartGame(); // Khi scene hoàn toàn tải xong, bắt đầu game
+        if (gameManager != null)
+        {
+            gameManager.StartGame();
+        }
     }
 
-
+    public void LoadMap1()
+    {
+        LoadMap("Map1");
+    }
     public void LoadMap2()
     {
-        LoadMap("Map2"); // Load map 2
+        LoadMap("Map2");
     }
-
     public void LoadMap3()
     {
-        LoadMap("Map3"); // Load map 3
+        LoadMap("Map3");
     }
 
     public void QuitGame()
@@ -50,7 +65,7 @@ public class GameUI : MonoBehaviour
 
     public void ContinueGame()
     {
-        gameManager.ResumeGame();
+        gameManager?.ResumeGame();
     }
 
     public void MainMenu()
@@ -60,6 +75,6 @@ public class GameUI : MonoBehaviour
 
     public void MapSelection()
     {
-        gameManager.Map();
+        gameManager?.Map();
     }
 }

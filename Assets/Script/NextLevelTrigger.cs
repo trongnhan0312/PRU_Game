@@ -49,9 +49,7 @@ public class NextLevelTrigger : MonoBehaviour
                 rb.linearVelocity = Vector2.zero; // Dừng mọi di chuyển
                 rb.bodyType = RigidbodyType2D.Static; // Đặt Player thành Static để không đi xuyên
             }
-
-           
-
+            CircleSpace.SetActive(false);
             // Load scene sau 0.2s để tránh lag
             Invoke("LoadNextScene", 0.2f);
         }
@@ -59,6 +57,12 @@ public class NextLevelTrigger : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene("Map2"); // Đổi "Map2" thành tên scene tiếp theo
+        if (gameManager != null)
+        {
+            gameManager.UnlockMap2();
+            gameManager.Map();// Gọi GameManager để mở khóa Map 2
+
+        }
     }
+
 }

@@ -4,7 +4,13 @@ using UnityEngine.SceneManagement;
 public class NextLevelTriggerMap2 : MonoBehaviour
 {
     private bool isTriggered = false; // Để tránh load nhiều lần
+    private GameManager gameManager;
     public GameObject CircleSpace;
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>(); // Tìm GameManager trong Scene
+    }
     void Update()
     {
         // 🔥 Nếu boss chưa chết -> Chặn player đi qua
@@ -20,7 +26,7 @@ public class NextLevelTriggerMap2 : MonoBehaviour
             if (boss.isBoss && !boss.IsKilledBoss) // Nếu có boss chưa chết thì không thể qua màn
             {
                 Debug.Log("🚫 Boss chưa chết, không thể qua màn!");
-                CircleSpace.SetActive(false);
+                //CircleSpace.SetActive(false);
                 return false;
             }
         }
@@ -51,6 +57,11 @@ public class NextLevelTriggerMap2 : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene("Map3"); // Đổi "Map2" thành tên scene tiếp theo
+        if (gameManager != null)
+        {
+            gameManager.UnlockMap3();
+            gameManager.Map();// Gọi GameManager để mở khóa Map 2
+
+        }
     }
 }

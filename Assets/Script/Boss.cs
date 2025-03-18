@@ -57,12 +57,39 @@ public class Boss : MonoBehaviour
                 animator.SetBool("IsMoving", false);
             }
 
-            if (!isBoss) // 🔥 Nếu không phải boss, quái sẽ tuần tra
+            if (!isBoss)
             {
                 Patrol();
             }
+            else
+            {
+                ReturnToStartPosition();
+            }
         }
     }
+
+    private void ReturnToStartPosition()
+    {
+        float distanceToStart = Vector2.Distance(transform.position, startPos);
+
+        if (distanceToStart > 0.1f) // Nếu Boss chưa về vị trí ban đầu
+        {
+            animator.SetBool("IsMoving", true);
+            transform.position = Vector3.MoveTowards(transform.position, startPos, patrolSpeed * Time.deltaTime);
+
+            // Kiểm tra xem Boss có cần đổi hướng không
+            if ((startPos.x > transform.position.x && direction == -1) ||
+                (startPos.x < transform.position.x && direction == 1))
+            {
+                Flip();
+            }
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
+    }
+
 
     private void Patrol()
     {
@@ -99,7 +126,7 @@ public class Boss : MonoBehaviour
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
 
-        if (!isHurt)
+        if (!isHurt) // Chỉ dừng di chuyển khi lần đầu bị tấn công
         {
             isHurt = true;
             Debug.Log("🔥 Quái bị tấn công!");
@@ -111,6 +138,7 @@ public class Boss : MonoBehaviour
             Die();
         }
     }
+
 
     private IEnumerator HurtRecovery()
     {

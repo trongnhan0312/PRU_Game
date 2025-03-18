@@ -6,40 +6,51 @@
 public class PlayerController : MonoBehaviour
 {
 
+    // 🎯 [1] Cấu hình di chuyển
+    [Header("🚀 Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float fallLimit = -10f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
-    private Animator animator;
+
     private bool isGrounded;
-    [SerializeField] private float fallLimit = -10f;
     private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
-
+    // 🔥 [2] Cấu hình bắn đạn
+    [Header("🔫 Shooting Settings")]
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject bulletPrefabs;
     [SerializeField] private float shotDelay = 0.15f;
     private float nextShot;
     [SerializeField] private int maxMana = 24;
 
-
+    // ⚔️ [3] Cấu hình tấn công
+    [Header("⚔️ Attack Settings")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 1f;
+    [SerializeField] private float attackDamage = 10f;
+
+    // 🩸 [4] Hiệu ứng & VFX
+    [Header("🩸 Effects & UI")]
+    [SerializeField] private GameObject blood;
+    [SerializeField] private Image manaBar;
+    [SerializeField] private Image hpBar;
     [SerializeField] private TextMeshProUGUI ammoManaText;
     [SerializeField] private TextMeshProUGUI ammoHPText;
 
-    [SerializeField] GameObject blood;
-    private SpriteRenderer spriteRenderer;
-    /* private GameManager gameManager;*/
-
-    [SerializeField] private Image manaBar; // Thanh màu xanh (UI Image)
+    // 💖 [5] Chỉ số nhân vật
+    [Header("💖 Player Stats")]
     [SerializeField] protected float maxHp = 100f;
     protected float currentHp;
     public float currentMana;
-    [SerializeField] private Image hpBar;
 
-    [SerializeField] private GameManager gameManager;
-    public  bool isInDialog = false; // Thêm biến này để theo dõi trạng thái hội thoại
+    // 🎮 [6] Hệ thống quản lý
+    [Header("🎮 Game Management")]
+    [SerializeField] private UIManager UIManager;
+    public bool isInDialog = false; // Theo dõi trạng thái hội thoại
 
     private void Awake()
     {
@@ -74,7 +85,7 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            gameManager.PauseMenu();
+            UIManager.PauseMenu();
         }
 
     }
@@ -161,7 +172,7 @@ public class PlayerController : MonoBehaviour
                 Enemy enemyScript = enemy.GetComponent<Enemy>();
                 if (enemyScript != null)
                 {
-                    enemyScript.TakeDamage(10f); // Gây 10 sát thương
+                    enemyScript.TakeDamage(attackDamage); // Gây 10 sát thương
                     GameObject bloodEffect = Instantiate(blood, enemy.transform.position, quaternion.identity);
                     Destroy(bloodEffect, 1f);
                 }
@@ -169,7 +180,7 @@ public class PlayerController : MonoBehaviour
                 Boss boss = enemy.GetComponent<Boss>();
                 if (boss != null)
                 {
-                    boss.TakeDamage(10f); // Gây 10 sát thương
+                    boss.TakeDamage(attackDamage); // Gây 10 sát thương
                     GameObject bloodEffect = Instantiate(blood, boss.transform.position, quaternion.identity);
                     Destroy(bloodEffect, 1f);
                 }
@@ -213,7 +224,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        gameManager.GameOverMenu();
+        UIManager.GameOverMenu();
     }
 
     private void UpdateHpBar()
