@@ -103,10 +103,10 @@ TextureImporter:
       name: renwubaij_0_0
       rect:
         serializedVersion: 2
-        x: 133
-        y: 47
-        width: 415
-        height: 434
+        x: 0
+        y: 0
+        width: 720
+        height: 700
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 150, w: 0}

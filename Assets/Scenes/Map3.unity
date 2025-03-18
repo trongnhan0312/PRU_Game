@@ -2711,7 +2711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5676337615659972978, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_Enabled
@@ -2883,6 +2883,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &355837764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+  m_PrefabInstance: {fileID: 355837760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355837761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e0842b4b0a14f459ff21098942301a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &498181534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118293,6 +118304,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1217377754}
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: manaBar
       value: 
       objectReference: {fileID: 1253195646}
@@ -118732,7 +118747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newTowerPrefab: {fileID: 710872381}
-  npcPrefab: {fileID: 0}
+  npcPrefab: {fileID: 355837764}
 --- !u!1001 &1942838336
 PrefabInstance:
   m_ObjectHideFlags: 0

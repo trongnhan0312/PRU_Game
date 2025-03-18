@@ -2081,13 +2081,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
 --- !u!1 &383004455 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2169202321702914543, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
   m_PrefabInstance: {fileID: 1107380548}
   m_PrefabAsset: {fileID: 0}
-
 --- !u!1 &466411190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6921,7 +6919,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
-
 --- !u!114 &571325853 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5294879025121634556, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
@@ -20253,6 +20250,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 377146975}
+    - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: manaBar
       value: 
