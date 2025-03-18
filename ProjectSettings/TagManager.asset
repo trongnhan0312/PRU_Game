@@ -100,6 +100,9 @@ TagManager:
   - name: NPC
     uniqueID: 824001451
     locked: 0
+  - name: CircleSpace
+    uniqueID: 2327178939
+    locked: 0
   - name: GameUI
     uniqueID: 2469348843
     locked: 0

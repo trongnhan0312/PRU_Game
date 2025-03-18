@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 public class NextLevelTrigger : MonoBehaviour
 {
     private bool isTriggered = false; // Để tránh load nhiều lần
-    private GameManager gameManager;
     public GameObject CircleSpace;
+    private UIManager gameUIManager;
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>(); // Tìm GameManager trong Scene
+        gameUIManager = FindObjectOfType<UIManager>(); // Tìm GameManager trong Scene
     }
 
     void Update()
@@ -57,10 +57,10 @@ public class NextLevelTrigger : MonoBehaviour
 
     private void LoadNextScene()
     {
-        if (gameManager != null)
+        if (gameUIManager != null)
         {
-            gameManager.UnlockMap2();
-            gameManager.Map();// Gọi GameManager để mở khóa Map 2
+            gameUIManager.UnlockMap2();
+            gameUIManager.Map();// Gọi GameManager để mở khóa Map 2
 
         }
     }

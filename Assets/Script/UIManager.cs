@@ -43,6 +43,9 @@ public class UIManager : MonoBehaviour
     }
     public void TryAgian()
     {
+        Time.timeScale = 1f;
+        Debug.Log("ÁN");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -52,6 +55,8 @@ public class UIManager : MonoBehaviour
         mainMenu?.SetActive(false);
         gameOverMenu?.SetActive(false);
         pauseMenu?.SetActive(false);
+        LockMap2?.SetActive(true);
+        LockMap3?.SetActive(true);
         Time.timeScale = 0f;
     }
 
@@ -86,6 +91,7 @@ public class UIManager : MonoBehaviour
         gameOverMenu?.SetActive(false);
         pauseMenu?.SetActive(false);
         MapSelection?.SetActive(true);
+        LockMap3!.SetActive(true);
         Time.timeScale = 0f;
     }
 
