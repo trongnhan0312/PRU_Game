@@ -81,26 +81,10 @@ public class NextLevelTrigger : MonoBehaviour
 
         if (UIManager != null)
         {
-            GameManager gameManager = FindObjectOfType<GameManager>();
-
-            if (gameManager != null)
-            {
-                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                Debug.Log($"✅ Hoàn thành màn {currentSceneIndex}, mở khóa màn tiếp theo!");
-
-                gameManager.CompleteMap(currentSceneIndex); // Gọi CompleteMap để lưu trạng thái mở khóa màn
-
-                SceneManager.LoadScene(currentSceneIndex + 1); // Chuyển sang màn tiếp theo
-            }
-            else
-            {
-                Debug.LogError("⚠️ Không tìm thấy GameManager!");
-            }
-
             UIManager.UnlockMap2();
             UIManager.Map(); // Gọi GameManager để mở khóa Map 2
 
-            
+
         }
     }
 }

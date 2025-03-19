@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-      
+        LockMap2?.SetActive(true);
+        LockMap3?.SetActive(true);
         MainMenu();
         Time.timeScale = 1f;
     }
@@ -176,21 +177,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Không tìm thấy GameManager trong GameUI!");
         }
-    }
-
-    public void CompleteMap(int mapNumber)
-    {
-        if (mapNumber == 1)
-        {
-            PlayerPrefs.SetInt("Map2Unlocked", 1); // 1 nghĩa là đã mở khóa map 2
-            UnlockMap2(); // Gọi hàm mở khóa map 2
-        }
-        else if (mapNumber == 2)
-        {
-            PlayerPrefs.SetInt("Map3Unlocked", 1); // 1 nghĩa là đã mở khóa map 3
-            UnlockMap3(); // Gọi hàm mở khóa map 3
-        }
-        PlayerPrefs.Save(); // Lưu thay đổi vào bộ nhớ
     }
 
 
