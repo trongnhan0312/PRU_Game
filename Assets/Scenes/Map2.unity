@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 743777261}
     - target: {fileID: 5447239316676193535, guid: 1da4af23c54d9994790aa4b09080d648, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.15
+      value: -13.44
       objectReference: {fileID: 0}
     - target: {fileID: 5447239316676193535, guid: 1da4af23c54d9994790aa4b09080d648, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 5447239316676193535, guid: 1da4af23c54d9994790aa4b09080d648, type: 3}
       propertyPath: m_LocalPosition.z
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 58823560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.15, y: -1.51, z: -10}
+  m_LocalPosition: {x: -13.44, y: -1.53, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14971,6 +14971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC(Dr.Ezreal)
       objectReference: {fileID: 0}
+    - target: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5246597557222010787, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -20208,11 +20212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2424127461018957109, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.15
+      value: -13.44
       objectReference: {fileID: 0}
     - target: {fileID: 2424127461018957109, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 2424127461018957109, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20252,7 +20256,7 @@ PrefabInstance:
       objectReference: {fileID: 377146975}
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: manaBar
@@ -20885,6 +20889,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5760339597187134244, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6235409885994175837, guid: 9398ad80da8dfd849b4a1b3c48ac55a1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20996,11 +21004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4793609463236485276, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 223.16
+      value: 222.66
       objectReference: {fileID: 0}
     - target: {fileID: 4793609463236485276, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.59
+      value: 8.58
       objectReference: {fileID: 0}
     - target: {fileID: 4793609463236485276, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21043,13 +21051,21 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: manaObject
+      value: 
+      objectReference: {fileID: 6879918777021194077, guid: ac5c525a4ff9e354095ddbbd7a23eaec, type: 3}
+    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: stayDamage
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: enterDamage
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: effectObject
+      value: 
+      objectReference: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: attack1Damage
       value: 10
@@ -21060,15 +21076,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: attackCooldown
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
-      propertyPath: damageInterval
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: damageInterval
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: patrolDistance
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8456381331284478580, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: m_LocalScale.x

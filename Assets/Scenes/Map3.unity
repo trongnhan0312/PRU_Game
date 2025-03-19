@@ -55608,7 +55608,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.028501779, y: -0.16343014}
+  m_Offset: {x: 0.054426953, y: -0.091413155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55618,7 +55618,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.31536305, y: 0.54941916}
+  m_Size: {x: 0.4812205, y: 0.6934532}
   m_EdgeRadius: 0
 --- !u!50 &1386468067
 Rigidbody2D:
@@ -55661,23 +55661,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolSpeed: 2
   chaseSpeed: 3.5
-  patrolDistance: 3
+  patrolDistance: 4
   detectionRange: 5
   maxHp: 300
   hpBar: {fileID: 232394754}
-  enterDamage: 10
-  stayDamage: 2
+  enterDamage: 5
+  stayDamage: 5
   isBoss: 1
   animator: {fileID: 1386468062}
   attackCooldown: 1
-  manaObject: {fileID: 0}
-  effectObject: {fileID: 0}
+  manaObject: {fileID: 6879918777021194077, guid: fb366bd47e50be943bcc8afa160b1d94, type: 3}
+  effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   nextText: {fileID: 0}
   nextCheckpoint: {fileID: 0}
-  gemObject: {fileID: 6879918777021194077, guid: fb366bd47e50be943bcc8afa160b1d94, type: 3}
   npcDialog: {fileID: 498181537}
-  attack1Damage: 10
-  attack2Damage: 10
   damageInterval: 0.3
 --- !u!1001 &1388055801
 PrefabInstance:
