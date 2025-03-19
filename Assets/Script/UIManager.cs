@@ -44,8 +44,6 @@ public class UIManager : MonoBehaviour
     public void TryAgian()
     {
         Time.timeScale = 1f;
-        Debug.Log("ÁN");
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -65,7 +63,7 @@ public class UIManager : MonoBehaviour
         gameOverMenu?.SetActive(true);
         pauseMenu?.SetActive(false);
         mainMenu?.SetActive(false);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void PauseMenu()
