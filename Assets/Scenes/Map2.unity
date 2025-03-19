@@ -14823,6 +14823,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1907423499}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: cricleSpace
+      value: 
+      objectReference: {fileID: 752215017}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogPanel
       value: 
       objectReference: {fileID: 584569668}
@@ -20081,6 +20085,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1001394837}
+    - target: {fileID: 1547047165518195015, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1001394837}
+    - target: {fileID: 1547047165518195015, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryAgian
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547047165518195015, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2296748579254795817, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20161,10 +20177,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3743888545081074776, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1001394837}
+    - target: {fileID: 3743888545081074776, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadMap3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743888545081074776, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5092170160920370697, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 58823562}
+    - target: {fileID: 8200443400052708835, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1001394837}
+    - target: {fileID: 8200443400052708835, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadMap2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200443400052708835, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8575816674917050706, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
