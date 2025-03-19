@@ -41,9 +41,25 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void MainMenuFromMap2()
+    {
+        mainMenu.SetActive(true);
+        gameOverMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        MapSelection.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void MainMenuFromMap3()
+    {
+        mainMenu.SetActive(true);
+        gameOverMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        MapSelection.SetActive(false);
+        Time.timeScale = 1f;
+    }
     public void TryAgian()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
@@ -57,6 +73,33 @@ public class UIManager : MonoBehaviour
         LockMap2?.SetActive(true);
         LockMap3?.SetActive(true);
         Time.timeScale = 0f;
+    }
+    public void mapSelectionFromMap2()
+    {
+        MapSelection?.SetActive(true);
+        mainMenu?.SetActive(false);
+        gameOverMenu?.SetActive(false);
+        pauseMenu?.SetActive(false);
+
+        LockMap2?.SetActive(false);
+        buttonMap2?.SetActive(true);
+
+        LockMap3?.SetActive(true);
+        Time.timeScale = 1f;
+    }
+    public void mapSelectionFromMap3()
+    {
+        MapSelection?.SetActive(true);
+        mainMenu?.SetActive(false);
+        gameOverMenu?.SetActive(false);
+        pauseMenu?.SetActive(false);
+
+        LockMap2?.SetActive(false);
+        buttonMap2?.SetActive(true);
+
+        LockMap3?.SetActive(false);
+        buttonMap3?.SetActive(true);
+        Time.timeScale = 1f;
     }
 
     public void GameOverMenu()
@@ -115,6 +158,7 @@ public class UIManager : MonoBehaviour
     {
         buttonMap3?.SetActive(true);
         LockMap3?.SetActive(false);
+        buttonMap2?.SetActive(true);
     }
 
     public void loadMap2()

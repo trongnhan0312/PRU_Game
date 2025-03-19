@@ -82,7 +82,7 @@ public class NextLevelTriggerMap2 : MonoBehaviour
         if (UIManager != null)
         {
             UIManager.UnlockMap3();
-            UIManager.Map(); // Gọi GameManager để mở khóa Map 2
+            UIManager.mapSelectionFromMap3(); // Gọi GameManager để mở khóa Map 3
 
 
         }

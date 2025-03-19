@@ -19,7 +19,6 @@ public class ItemMap1 : MonoBehaviour
 
             // Gọi sự kiện nếu có
             onCollected?.Invoke();
-
             Destroy(gameObject); // Xóa vật phẩm khỏi game
         }
     }
