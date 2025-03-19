@@ -37,6 +37,6 @@ public class CreditRoll : MonoBehaviour
     private void EndCreditAndChangeScene()
     {
         // Chuyển sang scene mới (Map 1)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Map1"); // Đảm bảo tên scene là "Map1" hoặc thay thế theo tên scene của bạn.
+        UnityEngine.SceneManagement.SceneManager.LoadScene("0"); // Đảm bảo tên scene là "Map1" hoặc thay thế theo tên scene của bạn.
     }
 }
