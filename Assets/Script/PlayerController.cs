@@ -262,20 +262,22 @@ public class PlayerController : MonoBehaviour
 
         if (currentHp <= 0)
         {
-            StartCoroutine(Die()); // Gọi Die() với delay 3 giây
+            Die();
         }
     }
 
-    private IEnumerator Die()
+    private void Die()
     {
-        isDead = true; // Đánh dấu nhân vật đã chết
-        animator.SetTrigger("Die"); // Chạy animation chết
+        if (isDead) return; // Đảm bảo chỉ chết một lần
+        isDead = true;
+
+        animator.SetTrigger("Die"); // Kích hoạt animation chết
         deathAudio.PlayOneShot(deathClip); // Phát âm thanh chết
 
-        yield return new WaitForSeconds(3f); // Đợi 3 giây
-
-        UIManager.GameOverMenu(); // Hiển thị menu Game Over
+        // Hiển thị Game Over ngay lập tức
+        UIManager.GameOverMenu();
     }
+
 
     private void UpdateHpBar()
     {
@@ -352,6 +354,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.CompareTag("KC"))
         {
+            Debug.Log("📦 Nhặt vật phẩm!");
             claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
         }

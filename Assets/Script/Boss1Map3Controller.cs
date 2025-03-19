@@ -100,7 +100,6 @@ public class Boss1Map3Controller : Enemy
             }
 
             GameObject mana = Instantiate(manaObject, spawnPosition, Quaternion.identity);
-            Destroy(mana, 10f);
         }
 
         base.Die();

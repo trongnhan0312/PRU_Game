@@ -53,8 +53,9 @@ public class NPCDialog : MonoBehaviour
         {
             enemy.SetActive(false);
             nextLv.SetActive(false);
-            cricleSpace.SetActive(false);
+            
         }
+        cricleSpace.SetActive(false);
 
         playerController = FindObjectOfType<PlayerController>();
 
@@ -184,8 +185,9 @@ public class NPCDialog : MonoBehaviour
         {
             enemy.SetActive(true);
             nextLv.SetActive(true);
-            cricleSpace.SetActive(true);
+            
         }
+        cricleSpace.SetActive(true);
     }
 
     private IEnumerator ShowDialog()

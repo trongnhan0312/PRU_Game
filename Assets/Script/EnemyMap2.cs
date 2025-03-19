@@ -102,7 +102,6 @@ public class EnemyMap2 : Enemy
             }
 
             GameObject mana = Instantiate(manaObject, spawnPosition, Quaternion.identity);
-            Destroy(mana, 10f);
         }
 
         base.Die();
