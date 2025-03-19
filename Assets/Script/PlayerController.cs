@@ -90,24 +90,53 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    [SerializeField] private AudioSource footstepAudio; // Âm thanh bước chân
+    [SerializeField] private AudioClip footstepClip; // File âm thanh
+    [SerializeField] private float footstepInterval = 0.3f; // Thời gian giữa mỗi bước chân
+
+    private float footstepTimer = 0f; // Đếm thời gian giữa các bước chân
+
     private void HandleMovement()
     {
         if (isInDialog) return;
+
         float moveInput = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        // Đảo hướng nhân vật
         if (moveInput > 0) transform.localScale = new Vector3(1, 1, 1);
         else if (moveInput < 0) transform.localScale = new Vector3(-1, 1, 1);
+
+        // Phát âm thanh bước chân khi nhân vật di chuyển
+        if (Mathf.Abs(moveInput) > 0.1f)
+        {
+            footstepTimer += Time.deltaTime;
+            if (footstepTimer >= footstepInterval)
+            {
+                footstepAudio.PlayOneShot(footstepClip);
+                footstepTimer = 0f;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f; // Reset khi dừng
+        }
     }
+
+    [SerializeField] private AudioSource jumpAudio; // Âm thanh khi nhảy
+    [SerializeField] private AudioClip jumpClip; // File âm thanh
 
     private void HandleJump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpAudio.PlayOneShot(jumpClip); // Phát âm thanh khi nhảy
         }
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-
     }
+
     private IEnumerator ShootRoutine()
     {
         animator.SetTrigger("Shoot");
@@ -145,6 +174,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ShootRoutine());
         }
     }
+
+
+    [SerializeField] private AudioSource attackAudio; // Âm thanh chém
+    [SerializeField] private AudioClip attackClip; // File âm thanh chém
+
     private void HandleAttack()
     {
         bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
@@ -156,9 +190,10 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("IsAttacking");
             animator.SetBool("IsHurt", false);
             Attack(); // Gọi trực tiếp Attack()
+
+            attackAudio.PlayOneShot(attackClip); // Phát âm thanh khi tấn công
         }
     }
-
 
 
     private void Attack()
@@ -204,8 +239,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    [SerializeField] private AudioSource hurtAudio; // Âm thanh khi bị thương
+    [SerializeField] private AudioClip hurtClip; // File âm thanh la hét
+    [SerializeField] private AudioSource deathAudio; // Âm thanh khi chết
+    [SerializeField] private AudioClip deathClip; // File âm thanh chết
+
+    private bool isDead = false; // Kiểm tra trạng thái nhân vật
+
     public void TakeDame(float damage)
     {
+        if (isDead) return; // Không nhận sát thương nếu đã chết
+
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
@@ -214,17 +258,23 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsHurt", true); // Chạy animation bị thương
         StartCoroutine(HurtEffect());
 
+        hurtAudio.PlayOneShot(hurtClip); // Phát âm thanh bị thương
+
         if (currentHp <= 0)
         {
-            Die();
+            StartCoroutine(Die()); // Gọi Die() với delay 3 giây
         }
     }
 
-
-
-    private void Die()
+    private IEnumerator Die()
     {
-        UIManager.GameOverMenu();
+        isDead = true; // Đánh dấu nhân vật đã chết
+        animator.SetTrigger("Die"); // Chạy animation chết
+        deathAudio.PlayOneShot(deathClip); // Phát âm thanh chết
+
+        yield return new WaitForSeconds(3f); // Đợi 3 giây
+
+        UIManager.GameOverMenu(); // Hiển thị menu Game Over
     }
 
     private void UpdateHpBar()
@@ -281,22 +331,28 @@ public class PlayerController : MonoBehaviour
         UpdateHpBar(); // Cập nhật UI
         UpdateAmmoHPText();
     }
+
+    [SerializeField] private AudioSource claimAudio; // Âm thanh khi nhặt vật phẩm
+    [SerializeField] private AudioClip claimClip; // File âm thanh nhặt vật phẩm
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Mana"))
         {
+            claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
             IncreaseMana(2);
             UpdateAmmoUI();// Cộng 2 Mana
         }
         if (collision.CompareTag("HP"))
         {
+            claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
             IncreaseHP(20);
             UpdateHpBar(); // Cộng 20 HP
         }
         if (collision.CompareTag("KC"))
         {
+            claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Trap"))
