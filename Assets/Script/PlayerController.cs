@@ -1,8 +1,8 @@
-﻿    using System.Collections;
-    using Unity.Mathematics;
-    using UnityEngine;
-    using UnityEngine.UI;
-    using TMPro;
+﻿using System.Collections;
+using Unity.Mathematics;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 public class PlayerController : MonoBehaviour
 {
 
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             UIManager.PauseMenu();
         }
@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour
         {
             claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
-            IncreaseMana(2);
+            IncreaseMana(5);
             UpdateAmmoUI();// Cộng 2 Mana
         }
         if (collision.CompareTag("HP"))

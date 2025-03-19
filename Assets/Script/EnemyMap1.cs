@@ -22,6 +22,7 @@ public class EnemyMap1 : Enemy
                 player.TakeDame(enterDamage);
                 animator.SetBool("IsAttacking", true);
                 animator.SetBool("IsMoving", false);
+                player.ResetHurtAnimation(); // Gọi hàm để tắt IsHurt khi rời khỏi quái
             }
         }
     }

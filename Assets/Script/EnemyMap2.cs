@@ -22,6 +22,7 @@ public class EnemyMap2 : Enemy
                 player.TakeDame(enterDamage);
                 animator.SetBool("IsAttacking", true);
                 animator.SetBool("IsMoving", false);
+                player.ResetHurtAnimation(); // Gọi hàm để tắt IsHurt khi rời khỏi quái
             }
         }
     }
@@ -58,7 +59,7 @@ public class EnemyMap2 : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            isDamaging=false;
+            isDamaging = false;
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3901407932268200402}
   - component: {fileID: 740771364946247683}
   - component: {fileID: 2449898695914503774}
+  - component: {fileID: 1222275379728313703}
   m_Layer: 0
   m_Name: KCMap1
   m_TagString: KC
@@ -124,3 +125,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.09000001}
   m_Radius: 0.09000001
+--- !u!114 &1222275379728313703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6879918777021194077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea1f9f9e82a4bc4fbbcb8ed4976b26b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
