@@ -134,12 +134,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 270924847748135727, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: m_Name
-      value: Enemy (7)
+      value: Enemy (7 Mana)
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: manaObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4615031869965830469, guid: d375690391db7ba47bab2b53e79942c4, type: 3}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
       value: 2
@@ -691,12 +691,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 270924847748135727, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: Enemy (2 HP)
       objectReference: {fileID: 0}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: manaObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3496662245760691880, guid: 42a7feb3184b16449b3925f177312152, type: 3}
     - target: {fileID: 3273886321216655839, guid: 6e33db59ebc9771429af6ecd15a94c95, type: 3}
       propertyPath: stayDamage
       value: 2
