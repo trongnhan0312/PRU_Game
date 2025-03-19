@@ -3,66 +3,88 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelTrigger : MonoBehaviour
 {
-    private bool isTriggered = false; // Để tránh load nhiều lần
+
+    private bool isTriggered = false; // Tránh load nhiều lần
+    private UIManager UIManager;
     public GameObject CircleSpace;
-    private UIManager gameUIManager;
+    private bool isItemCollected = false;
 
     void Start()
     {
-        gameUIManager = FindObjectOfType<UIManager>(); // Tìm GameManager trong Scene
+        UIManager = FindObjectOfType<UIManager>(); // Tìm GameManager trong Scene
+
     }
 
     void Update()
     {
-        // 🔥 Nếu boss chưa chết -> Chặn player đi qua
-        GetComponent<Collider2D>().isTrigger = IsBossDefeated();
+        // 🔥 Nếu boss chưa chết hoặc chưa nhặt item → Chặn player đi qua
+        GetComponent<Collider2D>().isTrigger = CanProceedToNextLevel();
     }
 
-    private bool IsBossDefeated()
+    private bool CanProceedToNextLevel()
     {
-        EnemyMap1[] bosses = FindObjectsOfType<EnemyMap1>(); // Tìm tất cả EnemyMap1 trong scene
-
+        // 🔹 Kiểm tra tất cả Boss đã chết
+        EnemyMap1[] bosses = FindObjectsOfType<EnemyMap1>();
         foreach (EnemyMap1 boss in bosses)
         {
-            if (boss.isBoss && !boss.IsKilledBoss) // Nếu có boss chưa chết thì không thể qua màn
+            if (boss.isBoss && !boss.IsKilledBoss)
             {
                 Debug.Log("🚫 Boss chưa chết, không thể qua màn!");
                 CircleSpace.SetActive(false);
                 return false;
             }
         }
-        Debug.Log("✅ Tất cả boss đã bị tiêu diệt, mở cổng qua màn!");
+
+        // 🔹 Kiểm tra xem người chơi đã nhặt vật phẩm chưa
+        if (!isItemCollected)
+        {
+            Debug.Log("📦 Vật phẩm chưa được nhặt, không thể qua màn!");
+            CircleSpace.SetActive(false);
+            return false;
+        }
+
+        Debug.Log("✅ Boss đã chết & vật phẩm đã được nhặt, mở cổng qua màn!");
         CircleSpace.SetActive(true);
-        return true; // Nếu tất cả boss đã chết, cho phép qua màn
+        return true;
+    }
+
+    // ✅ Gọi khi nhặt vật phẩm
+    public void CollectItem()
+    {
+        isItemCollected = true;
+        Debug.Log("🎉 Người chơi đã nhặt vật phẩm!");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !isTriggered && IsBossDefeated())
+        if (collision.CompareTag("Player") && !isTriggered && CanProceedToNextLevel())
         {
             isTriggered = true; // Đánh dấu đã chạm checkpoint
 
-            // Chặn Player di chuyển
+            // 🔹 Chặn Player di chuyển
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.linearVelocity = Vector2.zero; // Dừng mọi di chuyển
-                rb.bodyType = RigidbodyType2D.Static; // Đặt Player thành Static để không đi xuyên
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Static;
             }
+
             CircleSpace.SetActive(false);
-            // Load scene sau 0.2s để tránh lag
+
+            // 🔹 Load scene sau 0.2s để tránh lag
             Invoke("LoadNextScene", 0.2f);
         }
     }
 
     private void LoadNextScene()
     {
-        if (gameUIManager != null)
-        {
-            gameUIManager.UnlockMap2();
-            gameUIManager.Map();// Gọi GameManager để mở khóa Map 2
 
+        if (UIManager != null)
+        {
+            UIManager.UnlockMap2();
+            UIManager.Map(); // Gọi GameManager để mở khóa Map 2
+
+       
         }
     }
-
 }

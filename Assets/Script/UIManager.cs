@@ -39,12 +39,13 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-       SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
     public void TryAgian()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 
     public void mapSelection()
@@ -90,7 +91,7 @@ public class UIManager : MonoBehaviour
         pauseMenu?.SetActive(false);
         MapSelection?.SetActive(true);
         LockMap3!.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
 
     public void ResumeGame()
@@ -105,12 +106,27 @@ public class UIManager : MonoBehaviour
     {
         buttonMap2?.SetActive(true);
         LockMap2?.SetActive(false);
+
+        buttonMap3?.SetActive(false);
+        LockMap3?.SetActive(true);
     }
 
     public void UnlockMap3()
     {
         buttonMap3?.SetActive(true);
         LockMap3?.SetActive(false);
+    }
+
+    public void loadMap2()
+    {
+
+        SceneManager.LoadScene("Map2");
+    }
+
+    public void loadMap3()
+    {
+
+        SceneManager.LoadScene("Map3");
     }
 
 

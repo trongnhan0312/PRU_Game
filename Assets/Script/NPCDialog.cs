@@ -29,6 +29,7 @@ public class NPCDialog : MonoBehaviour
     private bool isTyping;
     private GameObject[] enemies;
     public GameObject nextLv;
+    public GameObject cricleSpace;
     public bool IsBossKilled { get; set; }
     [SerializeField] private NPCDialog npcAfterBossPrefab;
     [SerializeField] public GameObject newTowerPrefab;
@@ -52,6 +53,7 @@ public class NPCDialog : MonoBehaviour
         {
             enemy.SetActive(false);
             nextLv.SetActive(false);
+            cricleSpace.SetActive(false);
         }
 
         playerController = FindObjectOfType<PlayerController>();
@@ -182,6 +184,7 @@ public class NPCDialog : MonoBehaviour
         {
             enemy.SetActive(true);
             nextLv.SetActive(true);
+            cricleSpace.SetActive(true);
         }
     }
 
