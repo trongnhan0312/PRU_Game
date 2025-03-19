@@ -1616,6 +1616,10 @@ PrefabInstance:
       value: Dr.Ezreal
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteWidth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].dialogText
       value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
       objectReference: {fileID: 0}
@@ -1624,12 +1628,24 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteWidth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].speakerName
       value: Dr.Ezreal
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].spriteWidth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].spriteWidth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[4].speakerName
@@ -1656,8 +1672,24 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].spriteHeight
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].speakerSprite
@@ -2618,6 +2650,10 @@ PrefabInstance:
       value: Mysterious Character
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteWidth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].dialogText
       value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
       objectReference: {fileID: 0}
@@ -2626,8 +2662,16 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteWidth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].speakerName
       value: Mysterious Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].spriteWidth
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].speakerName
@@ -2658,8 +2702,20 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].spriteHeight
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].speakerSprite
@@ -2712,6 +2768,14 @@ PrefabInstance:
     - target: {fileID: 4223529138487944563, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659571320358665251, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659571320358665251, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 5676337615659972978, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: m_Enabled
@@ -2923,6 +2987,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2033366719}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: newTowerPrefab
+      value: 
+      objectReference: {fileID: 63584890}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: npcAfterBossPrefab
       value: 
       objectReference: {fileID: 63584892}
@@ -3013,12 +3081,20 @@ PrefabInstance:
       value: Dark Wizard
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteWidth
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].dialogText
       value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[1].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteWidth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].speakerName
@@ -3053,8 +3129,16 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteHeight
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteHeight
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].speakerSprite
@@ -55673,7 +55757,7 @@ MonoBehaviour:
   manaObject: {fileID: 6879918777021194077, guid: fb366bd47e50be943bcc8afa160b1d94, type: 3}
   effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   nextText: {fileID: 0}
-  nextCheckpoint: {fileID: 0}
+  nextCheckpoint: {fileID: 498181535}
   npcDialog: {fileID: 498181537}
   damageInterval: 0.3
 --- !u!1001 &1388055801
@@ -118866,6 +118950,10 @@ PrefabInstance:
       value: Dr.Ezreal
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteWidth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].dialogText
       value: "V\u1EADy t\xF4i s\u1EBD l\xEAn \u0111\u01B0\u1EDDng ngay!"
       objectReference: {fileID: 0}
@@ -118874,20 +118962,40 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteWidth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[2].speakerName
       value: Dark Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].spriteWidth
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[3].speakerName
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].spriteWidth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[4].speakerName
       value: Dr.Ezreal
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].spriteWidth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[5].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].spriteWidth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[6].speakerName
@@ -118906,8 +119014,32 @@ PrefabInstance:
       value: Nova
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[0].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[10].speakerName
       value: Nova
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[1].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[2].spriteHeight
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[3].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[4].spriteHeight
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: dialogEntries.Array.data[5].spriteHeight
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.data[0].speakerSprite

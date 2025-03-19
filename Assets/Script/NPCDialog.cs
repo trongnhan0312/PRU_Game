@@ -10,6 +10,8 @@ public class NPCDialog : MonoBehaviour
     {
         public string speakerName;
         public Sprite speakerSprite;
+        public float spriteWidth;  // Add width input
+        public float spriteHeight; // Add height input
         [TextArea(3, 5)] public string dialogText;
         public AudioClip voiceClip; // Thêm âm thanh hội thoại
     }
@@ -180,7 +182,13 @@ public class NPCDialog : MonoBehaviour
         nameNpc.text = dialogEntries[dialogIndex].speakerName;
         imageNpc.sprite = dialogEntries[dialogIndex].speakerSprite;
 
-        // Chơi âm thanh nếu có
+        // Set sprite size based on width and height values
+        if (dialogEntries[dialogIndex].spriteWidth > 0 && dialogEntries[dialogIndex].spriteHeight > 0)
+        {
+            imageNpc.rectTransform.sizeDelta = new Vector2(dialogEntries[dialogIndex].spriteWidth, dialogEntries[dialogIndex].spriteHeight);
+        }
+
+        // Play voice clip if available
         if (dialogEntries[dialogIndex].voiceClip != null && audioSource != null)
         {
             audioSource.clip = dialogEntries[dialogIndex].voiceClip;
@@ -195,6 +203,7 @@ public class NPCDialog : MonoBehaviour
 
         isTyping = false;
     }
+
 
     private void SkipTyping()
     {
