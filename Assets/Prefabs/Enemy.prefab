@@ -211,13 +211,15 @@ MonoBehaviour:
   isBoss: 0
   audioSource: {fileID: -3914256019295616932}
   hurtClip: {fileID: 8300000, guid: 27cae3d8496711645895d8074f05ad18, type: 3}
-  deathClip: {fileID: 8300000, guid: 08b7b4631ee2ef04ab9cbba5645b0ecd, type: 3}
   animator: {fileID: 7332319502560236513}
   attackCooldown: 1
   manaObject: {fileID: 4615031869965830469, guid: d375690391db7ba47bab2b53e79942c4, type: 3}
   effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   nextText: {fileID: 0}
   nextCheckpoint: {fileID: 0}
+  audioSource: {fileID: -3914256019295616932}
+  attackClip: {fileID: 8300000, guid: a0fc2dce624937846ae606a1fcf6bc76, type: 3}
+  deathClip: {fileID: 8300000, guid: 08b7b4631ee2ef04ab9cbba5645b0ecd, type: 3}
   damageInterval: 1
 --- !u!82 &-3914256019295616932
 AudioSource:
