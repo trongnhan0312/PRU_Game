@@ -3934,6 +3934,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2092843565}
+    - target: {fileID: 261453341274870050, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuFromMap2
+      objectReference: {fileID: 0}
     - target: {fileID: 687194445661003603, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_Name
       value: GameUI
@@ -4092,7 +4096,7 @@ PrefabInstance:
       objectReference: {fileID: 1804268013}
     - target: {fileID: 4723294342871785246, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: LoadMap1
       objectReference: {fileID: 0}
     - target: {fileID: 4723294342871785246, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
