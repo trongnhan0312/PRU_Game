@@ -55981,6 +55981,9 @@ MonoBehaviour:
   effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   nextText: {fileID: 0}
   nextCheckpoint: {fileID: 0}
+  audioSource: {fileID: 1316686223}
+  attackClip: {fileID: 8300000, guid: 7e567a4d37caf274a86986d2ffd3fd9c, type: 3}
+  deathClip: {fileID: 8300000, guid: 08b7b4631ee2ef04ab9cbba5645b0ecd, type: 3}
   damageInterval: 0.3
 --- !u!95 &1316686218 stripped
 Animator:
@@ -56401,6 +56404,9 @@ MonoBehaviour:
   effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   nextText: {fileID: 0}
   nextCheckpoint: {fileID: 498181535}
+  audioSource: {fileID: 1386468069}
+  attackClip: {fileID: 8300000, guid: f83b62c84135bc04a8ac83900db4aa6b, type: 3}
+  deathClip: {fileID: 8300000, guid: 08b7b4631ee2ef04ab9cbba5645b0ecd, type: 3}
   npcDialog: {fileID: 498181537}
   damageInterval: 0.3
 --- !u!82 &1386468069
@@ -120371,6 +120377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2302180552287922806, guid: f0a6160a6c9cea74cbe8e3033b0c1560, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4741584273901752427, guid: f0a6160a6c9cea74cbe8e3033b0c1560, type: 3}
       propertyPath: m_Name
       value: Boss1Map3

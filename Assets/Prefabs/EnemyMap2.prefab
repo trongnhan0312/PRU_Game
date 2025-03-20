@@ -217,6 +217,9 @@ MonoBehaviour:
   effectObject: {fileID: 2620635000374328478, guid: fb58fd58fdddb6f45badfb3e2ff160a3, type: 3}
   nextText: {fileID: 0}
   nextCheckpoint: {fileID: 0}
+  audioSource: {fileID: 3465716421028605245}
+  attackClip: {fileID: 8300000, guid: f83b62c84135bc04a8ac83900db4aa6b, type: 3}
+  deathClip: {fileID: 8300000, guid: 08b7b4631ee2ef04ab9cbba5645b0ecd, type: 3}
   damageInterval: 0.3
 --- !u!82 &3465716421028605245
 AudioSource:
