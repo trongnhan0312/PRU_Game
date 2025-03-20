@@ -31,10 +31,11 @@ public class NPCDialog : MonoBehaviour
     public GameObject nextLv;
     public GameObject cricleSpace;
     public bool IsBossKilled { get; set; }
+    [SerializeField] private bool enableCricleSpace = true;
     [SerializeField] private NPCDialog npcAfterBossPrefab;
     [SerializeField] public GameObject newTowerPrefab;
     [SerializeField] public GameObject creditPrefab;
-    [SerializeField] private Collider2D npcBlocker; // Thêm Collider để chặn di chuyển
+    [SerializeField] private Collider2D npcBlocker;
 
     private PlayerController playerController;
 
@@ -53,13 +54,15 @@ public class NPCDialog : MonoBehaviour
         {
             enemy.SetActive(false);
             nextLv.SetActive(false);
-            cricleSpace.SetActive(false);
+        }
 
+        if (cricleSpace != null)
+        {
+            cricleSpace.SetActive(enableCricleSpace);
         }
 
         playerController = FindObjectOfType<PlayerController>();
 
-        // Đảm bảo blocker được bật từ đầu
         if (npcBlocker != null)
         {
             npcBlocker.gameObject.SetActive(true);
@@ -91,18 +94,6 @@ public class NPCDialog : MonoBehaviour
         {
             readyToSpeak = true;
         }
-        if (collision.CompareTag("Player") && IsBossKilled)
-        {
-            readyToSpeak = true;
-        }
-    }
-
-    public void ShowCredit()
-    {
-        if (creditPrefab != null)
-        {
-            creditPrefab.SetActive(true);
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -127,7 +118,6 @@ public class NPCDialog : MonoBehaviour
         dialogPanel.SetActive(true);
         dialogIndex = 0;
 
-        // **Chặn người chơi đi tiếp bằng cách bật collider**
         if (npcBlocker != null)
         {
             npcBlocker.gameObject.SetActive(true);
@@ -159,7 +149,6 @@ public class NPCDialog : MonoBehaviour
         dialogIndex = 0;
         gameObject.SetActive(false);
 
-        // **Mở đường đi tiếp bằng cách tắt collider**
         if (npcBlocker != null)
         {
             npcBlocker.gameObject.SetActive(false);
@@ -178,15 +167,18 @@ public class NPCDialog : MonoBehaviour
 
         if (creditPrefab != null)
         {
-            ShowCredit();
+            creditPrefab.SetActive(true);
         }
 
         foreach (GameObject enemy in enemies)
         {
             enemy.SetActive(true);
             nextLv.SetActive(true);
-            cricleSpace.SetActive(true);
+        }
 
+        if (cricleSpace != null && enableCricleSpace)
+        {
+            cricleSpace.SetActive(true);
         }
     }
 
