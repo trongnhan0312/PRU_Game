@@ -14968,6 +14968,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 584569668}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: enableCricleSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.size
       value: 7
       objectReference: {fileID: 0}

@@ -11,6 +11,8 @@ public class CreditRoll : MonoBehaviour
     private TextMeshProUGUI creditText; // Tham chiếu tới TextMeshPro
     private RectTransform rectTransform; // Để thay đổi vị trí của text
     private bool isCreditComplete = false;
+    public GameObject PanelCredit;
+    private UIManager uiManager; // Tham chiếu đến UIManager
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class CreditRoll : MonoBehaviour
         rectTransform = creditText.GetComponent<RectTransform>(); // Lấy RectTransform để thay đổi vị trí
         // Đặt text bắt đầu từ dưới màn hình
         rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, startPositionY);
+
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     void Update()
@@ -35,9 +39,16 @@ public class CreditRoll : MonoBehaviour
         }
     }
 
-    private void EndCreditAndChangeScene()
+    public void EndCreditAndChangeScene()
     {
-        // Chuyển sang scene mới (Map 1)
-        SceneManager.LoadScene("0"); // Đảm bảo tên scene là "Map1" hoặc thay thế theo tên scene của bạn.
+        if (uiManager != null)
+        {
+            PanelCredit.SetActive(false); // Tắt credit panel
+            uiManager.MainMenuFromMap3(); // Gọi phương thức từ instance của UIManager
+        }
+        else
+        {
+            Debug.LogError("UIManager not found!");
+        }
     }
 }

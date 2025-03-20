@@ -2213,6 +2213,7 @@ MonoBehaviour:
   scrollSpeed: 100
   startPositionY: -16
   endPositionY: 4000
+  PanelCredit: {fileID: 570284699}
 --- !u!114 &130127298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54682,8 +54683,8 @@ Canvas:
   m_GameObject: {fileID: 570284699}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1756347295}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -54693,7 +54694,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1825618453
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &570284703
@@ -118935,7 +118936,7 @@ PrefabInstance:
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 2127543321}
+      objectReference: {fileID: 0}
     - target: {fileID: 8898868594720206036, guid: 2b359e500bfa3034da207d905c0fd3d0, type: 3}
       propertyPath: ammoManaText
       value: 
@@ -119478,6 +119479,10 @@ PrefabInstance:
       propertyPath: dialogPanel
       value: 
       objectReference: {fileID: 2033366719}
+    - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
+      propertyPath: enableCricleSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2210206556098237478, guid: 2cf86c9f64ed9a3439fcbca8df60e375, type: 3}
       propertyPath: dialogEntries.Array.size
       value: 9
@@ -120138,60 +120143,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c6338d1b445b149a0434dd052c32e1, type: 3}
---- !u!1 &2127543320
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2127543322}
-  - component: {fileID: 2127543321}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2127543321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127543320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b76e6861dcc17b4cb234950dde41076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  gameOverMenu: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  MapSelection: {fileID: 0}
-  InfoButton: {fileID: 0}
-  guidePanel: {fileID: 0}
-  buttonMap2: {fileID: 0}
-  buttonMap3: {fileID: 0}
-  LockMap2: {fileID: 0}
-  LockMap3: {fileID: 0}
---- !u!4 &2127543322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127543320}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.8105955, y: -1.8555595, z: 0.059054796}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2129071409 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3120973918540334830, guid: 4890f7ce94355ab40ab9f6f2280aa3c0, type: 3}
@@ -120394,7 +120345,6 @@ SceneRoots:
   - {fileID: 1990321615}
   - {fileID: 37073971}
   - {fileID: 1140814766}
-  - {fileID: 2127543322}
   - {fileID: 1989911261}
   - {fileID: 7294578557206173316}
   - {fileID: 1970568986}
