@@ -39,7 +39,11 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        mainMenu.SetActive(true);
+        gameOverMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        MapSelection.SetActive(false);
+        Time.timeScale = 1f;
     }
     public void MainMenuFromMap2()
     {
@@ -94,6 +98,10 @@ public class UIManager : MonoBehaviour
         pauseMenu?.SetActive(false);
         MapSelection?.SetActive(true);
 
+        buttonMap2?.SetActive(true);
+        LockMap3?.SetActive(false);
+        buttonMap3?.SetActive(true);
+
         UpdateMapSelectionUI();
 
         Time.timeScale = 1f;
@@ -110,6 +118,7 @@ public class UIManager : MonoBehaviour
         {
             LockMap2.SetActive(false);
             buttonMap2.SetActive(true);
+
         }
         else
         {
@@ -123,11 +132,7 @@ public class UIManager : MonoBehaviour
             LockMap3.SetActive(false);
             buttonMap3.SetActive(true);
         }
-        else
-        {
-            LockMap3.SetActive(true);
-            buttonMap3.SetActive(false);
-        }
+       
 
     }
 
