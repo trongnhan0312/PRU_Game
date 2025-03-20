@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using TMPro; // Nếu dùng TextMeshPro, nếu không thì sử dụng UnityEngine.UI cho Text UI
+using TMPro;
+using UnityEngine.SceneManagement; // Nếu dùng TextMeshPro, nếu không thì sử dụng UnityEngine.UI cho Text UI
 
 public class CreditRoll : MonoBehaviour
 {
@@ -37,6 +38,6 @@ public class CreditRoll : MonoBehaviour
     private void EndCreditAndChangeScene()
     {
         // Chuyển sang scene mới (Map 1)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("0"); // Đảm bảo tên scene là "Map1" hoặc thay thế theo tên scene của bạn.
+        SceneManager.LoadScene("0"); // Đảm bảo tên scene là "Map1" hoặc thay thế theo tên scene của bạn.
     }
 }
