@@ -39,7 +39,11 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        mainMenu.SetActive(true);
+        gameOverMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        MapSelection.SetActive(false);
+        Time.timeScale = 1f;
     }
     public void MainMenuFromMap2()
     {
@@ -93,6 +97,9 @@ public class UIManager : MonoBehaviour
         gameOverMenu?.SetActive(false);
         pauseMenu?.SetActive(false);
         MapSelection?.SetActive(true);
+
+        LockMap3?.SetActive(false);
+        buttonMap3?.SetActive(true);
 
         UpdateMapSelectionUI();
 
