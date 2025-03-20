@@ -343,14 +343,14 @@ public class PlayerController : MonoBehaviour
             claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
             IncreaseMana(5);
-            UpdateAmmoUI();// Cộng 2 Mana
+            UpdateAmmoUI();// Cộng 5 Mana
         }
         if (collision.CompareTag("HP"))
         {
             claimAudio.PlayOneShot(claimClip);
             Destroy(collision.gameObject);
-            IncreaseHP(20);
-            UpdateHpBar(); // Cộng 20 HP
+            IncreaseHP(10);
+            UpdateHpBar(); // Cộng 10 HP
         }
         if (collision.CompareTag("KC"))
         {
