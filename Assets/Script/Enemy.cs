@@ -99,6 +99,9 @@ public class Enemy : MonoBehaviour
     }
 
 
+    [SerializeField] private AudioSource audioSource; // Nguồn phát âm thanh
+    [SerializeField] private AudioClip hurtClip; // Âm thanh bị thương
+
     public void TakeDamage(float damage)
     {
         currentHp -= damage;
@@ -109,6 +112,13 @@ public class Enemy : MonoBehaviour
         {
             isHurt = true;
             Debug.Log("🔥 Quái bị tấn công!");
+
+            // ✅ Phát âm thanh bị thương
+            if (audioSource != null && hurtClip != null)
+            {
+                audioSource.PlayOneShot(hurtClip);
+            }
+
             StartCoroutine(HurtRecovery());
         }
 

@@ -36,9 +36,44 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        /**
+         * thêm cái này trước khi build game để xóa data lưu map
+         *  1. Thâm cái này save + unity chạy game + tắt game
+         *  2. Build game
+         *   PlayerPrefs.DeleteKey("Map2Unlocked");
+        PlayerPrefs.DeleteKey("Map3Unlocked");
+        PlayerPrefs.Save();
+        Debug.Log("Đã xóa dữ liệu mở khóa map");
+         * 
+         * 
+         */
 
-        LockMap2?.SetActive(true);
-        LockMap3?.SetActive(true);
+
+        if (PlayerPrefs.GetInt("Map2Unlocked", 0) == 1)
+        {
+            LockMap2.SetActive(false);
+            buttonMap2.SetActive(true);
+        }
+        else
+        {
+            LockMap2.SetActive(true);
+            buttonMap2.SetActive(false);
+        }
+
+        // Cập nhật trạng thái map 3
+        if (PlayerPrefs.GetInt("Map3Unlocked", 0) == 1)
+        {
+            LockMap3.SetActive(false);
+            buttonMap3.SetActive(true);
+        }
+        else
+        {
+            LockMap3.SetActive(true);
+            buttonMap3.SetActive(false);
+        }
+
+        //LockMap2?.SetActive(true);
+        //LockMap3?.SetActive(true);
         MainMenu();
         Time.timeScale = 1f;
     }
@@ -121,17 +156,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void UnlockMap2()
-    {
-        buttonMap2?.SetActive(true);
-        LockMap2?.SetActive(false);
-    }
+  
+   
 
-    public void UnlockMap3()
-    {
-        buttonMap3?.SetActive(true);
-        LockMap3?.SetActive(false);
-    }
+   
 
     public void OnPauseButtonClick()
     {
@@ -178,6 +206,9 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Không tìm thấy GameManager trong GameUI!");
         }
     }
+
+
+   
 
 
 }

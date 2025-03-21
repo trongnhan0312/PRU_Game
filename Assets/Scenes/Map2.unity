@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 58823560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.10229218, y: 0.058319997, z: -10}
+  m_LocalPosition: {x: -2.4155455, y: -3.5172498, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20244,7 +20244,7 @@ PrefabInstance:
       objectReference: {fileID: 1001394837}
     - target: {fileID: 830634590937581454, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenuFromMap2
+      value: MainMenuFromMap3
       objectReference: {fileID: 0}
     - target: {fileID: 830634590937581454, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -20256,7 +20256,7 @@ PrefabInstance:
       objectReference: {fileID: 1001394837}
     - target: {fileID: 1017923656500830603, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: mapSelectionFromMap3
+      value: mapSelectionFromMap2
       objectReference: {fileID: 0}
     - target: {fileID: 1017923656500830603, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -20373,6 +20373,10 @@ PrefabInstance:
     - target: {fileID: 3743888545081074776, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723294342871785246, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMap1
       objectReference: {fileID: 0}
     - target: {fileID: 5092170160920370697, guid: 161fea5f63a7bd14fb4f6ef7b6c79e3b, type: 3}
       propertyPath: m_Camera
@@ -20995,6 +20999,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!82 &1494002852 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5529020026579591284, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+  m_PrefabInstance: {fileID: 1606404312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1559990004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21354,6 +21363,14 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27cae3d8496711645895d8074f05ad18, type: 3}
+    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 08b7b4631ee2ef04ab9cbba5645b0ecd, type: 3}
+    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: manaObject
       value: 
       objectReference: {fileID: 6879918777021194077, guid: ac5c525a4ff9e354095ddbbd7a23eaec, type: 3}
@@ -21361,6 +21378,10 @@ PrefabInstance:
       propertyPath: stayDamage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1494002852}
     - target: {fileID: 6021615745497440778, guid: 69a489a5f71e3da4a90d9e1bb32166fb, type: 3}
       propertyPath: enterDamage
       value: 10

@@ -79,8 +79,9 @@ public class NextLevelTrigger : MonoBehaviour
     private void LoadNextScene()
     {
 
-        if (UIManager != null)
+       if (UIManager != null)
         {
+
             UIManager.UnlockMap2();
             UIManager.Map(); // Gọi GameManager để mở khóa Map 2
 
