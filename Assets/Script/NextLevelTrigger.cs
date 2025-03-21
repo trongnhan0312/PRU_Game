@@ -83,7 +83,7 @@ public class NextLevelTrigger : MonoBehaviour
         {
 
             UIManager.UnlockMap2();
-            UIManager.Map(); // Gọi GameManager để mở khóa Map 2
+            UIManager.mapSelectionFromMap2(); // Gọi GameManager để mở khóa Map 2
 
 
         }

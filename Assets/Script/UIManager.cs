@@ -170,6 +170,9 @@ public class UIManager : MonoBehaviour
         UpdateMapSelectionUI();
         MapSelection?.SetActive(true);
 
+        LockMap2.SetActive(true);
+        buttonMap2.SetActive(false);
+        LockMap3?.SetActive(true);
 
         //Time.timeScale = 0f;
     }
